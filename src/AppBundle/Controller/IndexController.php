@@ -21,7 +21,7 @@ class IndexController extends Controller
         $services = $em->getRepository('AppBundle:Service')->findAll();
         $services_detail = $em->getRepository('AppBundle:ServiceDetail')->findAll();
 
-        return $this->render('index/index.html.twig', array(
+        return $this->render('index.html.twig', array(
             'services' => $services,
             'detail' => $services_detail
         ));
