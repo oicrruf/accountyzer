@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.20.1"
+  },
+  "name": "accountyzer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/oicrruf/accountyzer.git",
+  "author": "Victor M. Reyes <oicrruf.0286@gmail.com>",
+  "license": "MIT"
+}

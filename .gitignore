@@ -17,10 +17,16 @@
 /web/bundles/
 
 #VisualStudioCode
-/.idea/
+/.vscode/
 
 #desktop.ini
 **/desktop.ini
 desktop.ini
 **/*/desktop.ini
 /nbproject/private/
+
+#WebPack
+/node_modules/*
+
+#NetBeans 
+/nbproject/*
