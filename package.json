@@ -2,10 +2,13 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@symfony/webpack-encore": "^0.20.1",
+    "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
     "node-sass": "^4.9.2",
     "popper.js": "^1.14.4",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "url-loader": "^1.0.1",
+    "webpack-notifier": "^1.6.0"
   },
   "name": "accountyzer",
   "version": "1.0.0",
@@ -13,7 +16,5 @@
   "repository": "https://github.com/oicrruf/accountyzer.git",
   "author": "Victor M. Reyes <oicrruf.0286@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "bootstrap": "^4.1.3"
-  }
+  "dependencies": {}
 }

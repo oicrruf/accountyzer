@@ -1,6 +1,6 @@
 // var $ = require('jquery');
 
-require('../css/app.sass');
+require('../css/common.sass');
 
 const $ = require('jquery');
 // JS is equivalent to the normal "bootstrap" package
