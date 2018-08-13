@@ -7,36 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Service controller.
- *
- * @Route("service")
- */
 class ServiceController extends Controller
 {
-    /**
-     * Lists all service entities.
-     *
-     * @Route("/", name="service_index")
-     * @Method("GET")
-     */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $services = $em->getRepository('AppBundle:Service')->findAll();
+        $services_detail = $em->getRepository('AppBundle:ServiceDetail')->findAll();
 
-        return $this->render('service/index.html.twig', array(
+        return $this->render('service/serviceIndex.html.twig', array(
             'services' => $services,
+            'detail' => $services_detail
         ));
     }
 
-    /**
-     * Creates a new service entity.
-     *
-     * @Route("/new", name="service_new")
-     * @Method({"GET", "POST"})
-     */
     public function newAction(Request $request)
     {
         $service = new Service();
@@ -51,34 +36,23 @@ class ServiceController extends Controller
             return $this->redirectToRoute('service_show', array('id' => $service->getId()));
         }
 
-        return $this->render('service/new.html.twig', array(
+        return $this->render('service/serviceNew.html.twig', array(
             'service' => $service,
             'form' => $form->createView(),
         ));
     }
 
-    /**
-     * Finds and displays a service entity.
-     *
-     * @Route("/{id}", name="service_show")
-     * @Method("GET")
-     */
     public function showAction(Service $service)
     {
         $deleteForm = $this->createDeleteForm($service);
 
-        return $this->render('service/show.html.twig', array(
+        return $this->render('service/serviceShow.html.twig', array(
             'service' => $service,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
-    /**
-     * Displays a form to edit an existing service entity.
-     *
-     * @Route("/{id}/edit", name="service_edit")
-     * @Method({"GET", "POST"})
-     */
+    
     public function editAction(Request $request, Service $service)
     {
         $deleteForm = $this->createDeleteForm($service);
@@ -91,19 +65,13 @@ class ServiceController extends Controller
             return $this->redirectToRoute('service_edit', array('id' => $service->getId()));
         }
 
-        return $this->render('service/edit.html.twig', array(
+        return $this->render('service/ServiceEdit.html.twig', array(
             'service' => $service,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
-    /**
-     * Deletes a service entity.
-     *
-     * @Route("/{id}", name="service_delete")
-     * @Method("DELETE")
-     */
     public function deleteAction(Request $request, Service $service)
     {
         $form = $this->createDeleteForm($service);

@@ -11,9 +11,6 @@ use AppBundle\Entity\ServiceDetail;
 
 class IndexController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();

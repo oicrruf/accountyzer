@@ -2,19 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Inicio | Accountyzer {% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="{{ asset('build/common.css') }}" rel="stylesheet" />
         <link href="{{ asset('build/accountyzer.css') }}" rel="stylesheet" />
     </head>
     <body>
-        <nav class="navbar fixed-top navbar-dark bg-dark mb-7">
-            <a class="navbar-brand" href="#">Accountyzer</a>
-        </nav>
+        {% block navbar %}
+            {{ include('layout/navbar.html.twig')}}
+        {% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}
+            {{ include('layout/footer.html.twig')}}
+        {% endblock %}
         {% block javascripts %}
-        <script src="{{ asset('build/app.js') }}"></script>
+        <script src="{{ asset('build/common.js') }}"></script>
         {% endblock %}
     </body>
 </html>

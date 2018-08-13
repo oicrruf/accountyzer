@@ -1,0 +1,7 @@
+app_index:
+    path:     /
+    defaults: { _controller: AppBundle:Index:index }
+
+#Servicios
+app_service: 
+    resource: "@AppBundle/Resources/config/routing/service.yml"

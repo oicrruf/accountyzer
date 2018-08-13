@@ -1,0 +1,30 @@
+{% extends 'layout/base.html.twig' %}
+{% block title %}Servicios | Accountyzer {% endblock %}
+{% block body %}
+    {% for service in services %}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <a href="{{ path('service_show', { 'id': service.id }) }}">
+                            <h2 class="mb-3">
+                            <i class="{{ service.icon }} fa-fw"></i>
+                            {{ service.name }}
+                            </h2>
+                        </a>
+                        <p>{{ service.description }}</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <ul class="fa-ul">
+                            {% for d in detail %}
+                                {% if service.id == d.service.id %}
+                                    <li><span class="fa-li" ><i class="fas fa-angle-right"></i></span>{{ d.name }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}

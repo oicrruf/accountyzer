@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/base.html.twig' %}
 
 {% block body %}
     <h1>Service</h1>
@@ -26,7 +26,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('service_index') }}">Back to the list</a>
+            <a href="{{ path('services_index') }}">Back to the list</a>
         </li>
         <li>
             <a href="{{ path('service_edit', { 'id': service.id }) }}">Edit</a>
