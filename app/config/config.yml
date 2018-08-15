@@ -2,17 +2,19 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: packages/sonata_admin.yaml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     assets:
         json_manifest_path: '%kernel.project_dir%/web/build/manifest.json'
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: [es] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -71,12 +73,3 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
-
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        sonata.user.block.menu:
-        sonata.user.block.account:
-        sonata.block.service.text:
-        sonata.admin.block.admin_list:
-            contexts:   [admin]
