@@ -5,16 +5,17 @@
         <title>{% block title %}Inicio | Accountyzer {% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="{{ asset('build/common.css') }}" rel="stylesheet" />
         <link href="{{ asset('build/accountyzer.css') }}" rel="stylesheet" />
     </head>
     <body>
         {% block navbar %}
-            {{ include('layout/navbar.html.twig')}}
+            {{ include('templates/navbar.html.twig')}}
         {% endblock %}
         {% block body %}{% endblock %}
         {% block footer %}
-            {{ include('layout/footer.html.twig')}}
+            {{ include('templates/footer.html.twig')}}
         {% endblock %}
         {% block javascripts %}
         <script src="{{ asset('build/common.js') }}"></script>

@@ -1,0 +1,24 @@
+services:
+    app.admin.service:
+        class: AppBundle\Admin\ServiceAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Servicios", label: "Servicios" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Service
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+        public: true
+
+    app.admin.service_detail:
+        class: AppBundle\Admin\ServiceDetailAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Servicios", label: "Detalles de Servicios" }
+        arguments:
+            - ~
+            - AppBundle\Entity\ServiceDetail
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+        public: true

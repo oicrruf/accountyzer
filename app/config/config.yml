@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: packages/sonata_admin.yaml }
+    - { resource: "@AppBundle/Resources/config/admin.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -73,3 +74,8 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
+
+#Sonata Admin Bundle 
+sonata_admin:
+    title:      Accountyzer
+#    title_logo: bundles/app/images/fancy_acme_logo.png
