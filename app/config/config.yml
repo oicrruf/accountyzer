@@ -78,4 +78,4 @@ sensio_framework_extra:
 #Sonata Admin Bundle 
 sonata_admin:
     title:      Accountyzer
-#    title_logo: bundles/app/images/fancy_acme_logo.png
+    title_logo: images/logo-accountyzer-black-25.png
