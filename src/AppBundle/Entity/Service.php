@@ -20,6 +20,11 @@ class Service
     /**
      * @var string
      */
+    private $slug;
+
+    /**
+     * @var string
+     */
     private $icon;
 
     /**
@@ -74,6 +79,30 @@ class Service
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Service
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**

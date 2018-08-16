@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                        <a href="{{ path('service_show', { 'id': service.id }) }}">
+                        <a href="{{ path('service_show', { 'slug': service.slug }) }}">
                             <h2 class="mb-3">
                             <i class="{{ service.icon }} fa-fw"></i>
                             {{ service.name }}

@@ -1,5 +1,5 @@
 services_index:
-    path:     /services
+    path:     /servicios
     methods:  [GET]
     defaults: { _controller: AppBundle:Service:index }
 
@@ -9,7 +9,7 @@ service_new:
     defaults: { _controller: AppBundle:Service:new }
 
 service_show:
-    path:     /service/{id}
+    path:     /servicio/{slug}
     methods:  [GET]
     defaults: { _controller: AppBundle:Service:show }
 

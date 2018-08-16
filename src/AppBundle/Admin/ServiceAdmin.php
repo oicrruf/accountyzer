@@ -12,6 +12,7 @@ class ServiceAdmin extends AbstractAdmin
     {
         $formMapper->add('name', 'text');
         $formMapper->add('description', 'text');
+        $formMapper->add('slug', 'text');
         $formMapper->add('icon', 'text');
     }
 
@@ -19,6 +20,7 @@ class ServiceAdmin extends AbstractAdmin
     {
         $datagridMapper->add('name');
         $datagridMapper->add('description');
+        $datagridMapper->add('slug');
         $datagridMapper->add('icon');
     }
 
@@ -26,6 +28,7 @@ class ServiceAdmin extends AbstractAdmin
     {
         $listMapper->addIdentifier('name');
         $listMapper->addIdentifier('description');
+        $listMapper->addIdentifier('slug');
         $listMapper->addIdentifier('icon');
     }
 }

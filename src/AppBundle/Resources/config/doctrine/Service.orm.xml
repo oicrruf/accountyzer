@@ -17,6 +17,11 @@
         <option name="fixed"/>
       </options>
     </field>
+    <field name="slug" type="string" column="slug" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
     <field name="icon" type="string" column="icon" length="100" nullable="false">
       <options>
         <option name="fixed"/>

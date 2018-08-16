@@ -1,13 +1,16 @@
+{% spaceless %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Inicio | Accountyzer {% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon/favicon.ico') }}" />
+        <meta name="theme-color" content="#343a40" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="{{ asset('build/common.css') }}" rel="stylesheet" />
-        <link href="{{ asset('build/accountyzer.css') }}" rel="stylesheet" />
+        {% block stylesheets %}
+            <link href="{{ asset('build/common.css') }}" rel="stylesheet" />
+            <link href="{{ asset('build/accountyzer.css') }}" rel="stylesheet" />
+        {% endblock %}
     </head>
     <body>
         {% block navbar %}
@@ -22,3 +25,4 @@
         {% endblock %}
     </body>
 </html>
+{% endspaceless %}
