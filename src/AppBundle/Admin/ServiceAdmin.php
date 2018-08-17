@@ -6,29 +6,36 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 class ServiceAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', 'text');
-        $formMapper->add('description', 'text');
-        $formMapper->add('slug', 'text');
-        $formMapper->add('icon', 'text');
+        $formMapper
+            ->add('name', TextType::class)
+            ->add('description', TextareaType::class)
+            ->add('slug', TextType::class)
+            ->add('icon', TextType::class)
+        ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('name');
-        $datagridMapper->add('description');
-        $datagridMapper->add('slug');
-        $datagridMapper->add('icon');
+        $datagridMapper
+            ->add('name')
+            ->add('description')
+            ->add('slug')
+            ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('name');
-        $listMapper->addIdentifier('description');
-        $listMapper->addIdentifier('slug');
-        $listMapper->addIdentifier('icon');
+        $listMapper
+            ->addIdentifier('name')
+            ->addIdentifier('description')
+            ->addIdentifier('slug')
+        ;
     }
 }
