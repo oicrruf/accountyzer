@@ -101,7 +101,7 @@ sonata_admin:
         search_result_block: '@SonataAdmin/Block/block_search_result.html.twig'
 
     title:      Accountyzer
-    title_logo: images/logo-accountyzer-black-25.png
+    title_logo: images/logo-accountyzer-black.svg
 
 #Sonata Block
 sonata_block:
@@ -137,3 +137,37 @@ sonata_user:
     class:
         user: Application\Sonata\UserBundle\Entity\User
         group: Application\Sonata\UserBundle\Entity\Group
+
+#Sonata SEO Bundle
+sonata_seo:
+    encoding:         UTF-8
+    page:                   
+        #title:            Inicio | Accountyzer
+        default:          sonata.seo.page.default
+        metas:
+            name:
+                keywords:             impuestos, auditoria, servicio de outsourcing, consultoria y asesoria, desarrollo del talento humano
+                #description:          Sitio Web de Accountyzer
+                robots:               index, follow
+
+            property:
+                # Facebook application settings
+                #'fb:app_id':          XXXXXX
+                #'fb:admins':          admin1, admin2
+
+                # Open Graph information
+                # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
+                'og:site_name':       Accountyzer
+                'og:description':     Sitio web disenado por Victor M. Reyes [oicrruf.0286@gmail.com]
+
+            http-equiv:
+                'Content-Type':         text/html; charset=utf-8
+                #'X-Ua-Compatible':      IE=EmulateIE7
+
+            charset:
+                UTF-8:    ''
+
+        head:
+            'xmlns':              http://www.w3.org/1999/xhtml
+            'xmlns:og':           http://opengraphprotocol.org/schema/
+            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"

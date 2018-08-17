@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Sonata\SeoBundle\SonataSeoBundle(),
             new AppBundle\AppBundle(),
         ];
 
