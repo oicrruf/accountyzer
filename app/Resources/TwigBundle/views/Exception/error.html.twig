@@ -1,0 +1,15 @@
+{% extends 'templates/base.html.twig' %}
+{% block title %}{{ status_text|trans }} | Accountyzer{% endblock %}
+{% block body %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="error col-lg-12">
+                    <h1>{{ status_code }}</h1>
+                    <h2>{{ status_text }}</h2>
+                    <p>Es posible que el enlace que seleccionaste esté dañado o que se haya eliminado la página.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

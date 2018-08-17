@@ -146,9 +146,9 @@ sonata_seo:
         default:          sonata.seo.page.default
         metas:
             name:
-                keywords:             impuestos, auditoria, servicio de outsourcing, consultoria y asesoria, desarrollo del talento humano
+                keywords:             accountyzer, el salvador, contabilidad, capacitacion, impuestos, auditoria, servicio de outsourcing, consultoria y asesoria, desarrollo del talento humano
                 #description:          Sitio Web de Accountyzer
-                robots:               index, follow
+                #robots:               index, follow
 
             property:
                 # Facebook application settings
