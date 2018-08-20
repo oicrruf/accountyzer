@@ -1,3 +1,7 @@
+app_contact:
+    resource: "@AppBundle/Controller/ContactController.php"
+    type:     annotation
+
 app:
     resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /

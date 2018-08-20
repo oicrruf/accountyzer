@@ -5,3 +5,7 @@ app_index:
 #Servicios
 app_service: 
     resource: "@AppBundle/Resources/config/routing/service.yml"
+
+#Contacto
+app_contact: 
+    resource: "@AppBundle/Resources/config/routing/contact.yml"

@@ -2,7 +2,7 @@ services:
     app.admin.service:
         class: AppBundle\Admin\ServiceAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Servicios", label: "Servicios" }
+            - { name: sonata.admin, manager_type: orm, group: "Servicios", label: "Servicios", icon: "<i class=\"fa fa-bookmark\"></i>" }
         arguments:
             - ~
             - AppBundle\Entity\Service
@@ -14,10 +14,22 @@ services:
     app.admin.service_detail:
         class: AppBundle\Admin\ServiceDetailAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Servicios", label: "Detalles de Servicios" }
+            - { name: sonata.admin, manager_type: orm, group: "Servicios", label: "Detalles de Servicios", icon: "<i class=\"fa fa-bookmark\"></i>" }
         arguments:
             - ~
             - AppBundle\Entity\ServiceDetail
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+        public: true
+    
+    app.admin.contact:
+        class: AppBundle\Admin\ContactAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Mensajes", label: "Mensajes", icon: "<i class=\"fa fa-envelope\"></i>" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Contact
             - ~
         calls:
             - [ setTranslationDomain, [AppBundle]]

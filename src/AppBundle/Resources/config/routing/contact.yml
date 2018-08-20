@@ -1,0 +1,9 @@
+message_new:
+    path:    contacto
+    methods:  [GET, POST]
+    defaults: { _controller: AppBundle:Contact:new }
+  
+message_show:
+    path:     /contacto/{id}
+    methods:  [GET]
+    defaults: { _controller: AppBundle:Contact:show }

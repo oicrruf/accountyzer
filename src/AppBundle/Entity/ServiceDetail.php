@@ -95,4 +95,3 @@ class ServiceDetail
         return $this->service;
     }
 }
-

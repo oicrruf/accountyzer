@@ -15,7 +15,7 @@
             <li class="nav-item {% if app.request.pathinfo == '/' %}active{% endif %}">
                 <a class="nav-link" href="{{ path('app_index') }}">Inicio</a>
             </li>
-            <li class="nav-item {% if app.request.pathinfo == '/services' %}active{% endif %}">
+            <li class="nav-item {% if app.request.pathinfo == '/servicios' %}active{% endif %}">
                 <a class="nav-link" href="{{ path('services_index') }}">Servicios</a>
             </li>
             <li class="nav-item {% if app.request.pathinfo == '/team' %}active{% endif %}">
@@ -23,6 +23,9 @@
             </li>
             <li class="nav-item {% if app.request.pathinfo == '/team' %}active{% endif %}">
                 <a class="nav-link" href="#">Equipo de trabajo</a>
+            </li>
+            <li class="nav-item {% if app.request.pathinfo == '/contacto' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('message_new') }}">Contacto</a>
             </li>
             
             {#
@@ -64,6 +67,10 @@
                             <a class="dropdown-item" style="color: #000" href="{{ path('sonata_admin_dashboard')}}">
                                 <i class="fas fa-tachometer-alt"></i>
                                 Dashboard
+                            </a>
+                            <a class="dropdown-item" style="color: #000" href="{{ path('admin_app_contact_list')}}">
+                                <i class="fas fa-envelope"></i>
+                                Mensajes
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" style="color: #000" href="{{ logout_url() }}">
