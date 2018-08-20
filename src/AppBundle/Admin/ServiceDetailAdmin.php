@@ -1,14 +1,25 @@
 <?php 
+
 namespace AppBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
-use AppBundle\Entity\Service;
+/**
+ * Types
+ */
+
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+/**
+ * Modelos relacionados
+ */
+
+use AppBundle\Entity\Service;
 
 class ServiceDetailAdmin extends AbstractAdmin
 {
@@ -34,8 +45,23 @@ class ServiceDetailAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('name')
+            ->add('name')
             ->add('service.name')
+            ->add('_action', null, [
+                'actions' => [
+                    'show' => [],
+                    'edit' => [],
+                    'delete' => [],
+                ],
+            ])
             ;
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->add('name')
+            ->add('service.name')
+        ;
     }
 }
