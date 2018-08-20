@@ -142,7 +142,7 @@ sonata_user:
 sonata_seo:
     encoding:         UTF-8
     page:                   
-        #title:            Inicio | Accountyzer
+        title:            Accountyzer
         default:          sonata.seo.page.default
         metas:
             name:
@@ -151,14 +151,17 @@ sonata_seo:
                 #robots:               index, follow
 
             property:
+                'site_name':       Accountyzer
+                'author':          VKINGS.NET by Victor M. Reyes
+                'theme-color':     '#343a40'
+                'viewport':        width=device-width, initial-scale=1, shrink-to-fit=no      
+                'description':     ¿Quienes somos? 
                 # Facebook application settings
                 #'fb:app_id':          XXXXXX
                 #'fb:admins':          admin1, admin2
 
                 # Open Graph information
                 # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
-                'og:site_name':       Accountyzer
-                'og:description':     Sitio web disenado por Victor M. Reyes [oicrruf.0286@gmail.com]
 
             http-equiv:
                 'Content-Type':         text/html; charset=utf-8

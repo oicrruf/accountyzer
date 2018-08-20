@@ -16,6 +16,12 @@ class ServiceController extends Controller
         $services = $em->getRepository('AppBundle:Service')->findAll();
         $services_detail = $em->getRepository('AppBundle:ServiceDetail')->findAll();
 
+        $seoPage = $this->container->get('sonata.seo.page');
+
+        $seoPage
+            ->setTitle('Servicios | Accountyzer')
+            ->addMeta('property', 'type', 'services');
+
         return $this->render('service/serviceIndex.html.twig', array(
             'services' => $services,
             'detail' => $services_detail
@@ -45,6 +51,13 @@ class ServiceController extends Controller
     public function showAction(Service $service)
     {
         $em = $this->getDoctrine()->getManager();
+
+        $seoPage = $this->container->get('sonata.seo.page');
+
+        $seoPage
+            ->setTitle($service->getName().' | Accountyzer')
+            ->addMeta('property', 'description', $service->getDescription())
+            ->addMeta('property', 'type', 'service');
 
         $deleteForm = $this->createDeleteForm($service);
         

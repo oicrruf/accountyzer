@@ -1,11 +1,8 @@
-{% spaceless %}
 <!DOCTYPE html>
 <html lang="es" {{ sonata_seo_html_attributes() }}>
     <head>
         {{ sonata_seo_metadatas() }}
-        <meta name="theme-color" content="#343a40" />        
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% block title %}Inicio | Accountyzer {% endblock %}</title>
+        {{ sonata_seo_title() }}
         <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon/favicon.ico') }}" />
         {% block stylesheets %}
             <link href="{{ asset('build/common.css') }}" rel="stylesheet" />
@@ -25,5 +22,7 @@
         {% endblock %}
     </body>
 </html>
-
+{#
+{% spaceless %}
 {% endspaceless %}
+#}
