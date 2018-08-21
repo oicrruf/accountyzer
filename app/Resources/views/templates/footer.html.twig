@@ -1,6 +1,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
+           
             <div class="col-lg-2">
                 <h5>Redes Sociales</h5>
                 <ul>
@@ -9,15 +10,23 @@
                     <li><a href="#"><i class="fab fa-twitter"></i> /accountyzer</a></li>
                 </ul>
             </div>
-             <div class="col-lg-4">
+            <div class="col-lg-4">
                 <h5>Accesos directos</h5>
                 <ul>
-                    <li><a href="{{ path('app_index') }}">Inicio</a></li>
                     <li><a href="{{ path('services_index') }}">Servicios</a></li>
                     <li><a href="#">Galería</a></li>
                     <li><a href="#">Equipo de trabajo</a></li>
+                    <li><a href="{{ path('message_new') }}">Contacto</a></li>
                 </ul>
             </div>
+            {#
+            <div class="footer-logo">
+                <img src="{{ asset('/images/logo-accountyzer-white.svg')}}" />
+            </div>
+            #}
         </div>
     </div>
 </footer>
+<div class="sponsor">
+    <strong>Sitio Web en Contrucción:</strong> propierdad de Accountyzer y diseñado por: Víctor M. Reyes
+</div>

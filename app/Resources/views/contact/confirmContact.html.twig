@@ -2,11 +2,13 @@
 {% block body %}
     <section>
         <div class="container">
-            <h1>¡{{ contact.name }} tu mensaje ha sido enviado exitosamente!</h1>
-            <div style="font-size: 5rem" class="mb-4">
-                <i class="far fa-thumbs-up"></i>
+            <div class="contact-confirm">
+                <h1>¡<span>{{ contact.name }}</span> tu mensaje ha sido enviado exitosamente!</h1>
+                <div style="font-size: 5rem" class="mb-4">
+                    <i class="far fa-thumbs-up"></i>
+                </div>
+                <h3>Tu número de confirmación es <span>{{ contact.id }}</span></h3>
             </div>
-            <h3>Tu número de confirmación es {{ contact.id }}</h3>
         </div>
     </section>
 {% endblock %}

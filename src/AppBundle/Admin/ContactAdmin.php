@@ -15,6 +15,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 /**
  * Modelos relacionados
@@ -44,9 +45,9 @@ class ContactAdmin extends AbstractAdmin
                 )) 
             ->add('interest', EntityType::class, [
                 'class' => Service::class,
-                'choice_label' => 'name',
                 'disabled'  => 'true'
             ])
+            ->add('answered', CheckboxType::class)
         ;
     }
 
@@ -59,6 +60,7 @@ class ContactAdmin extends AbstractAdmin
             ->add('phone')
             ->add('message')
             ->add('interest.name')
+            ->add('answered')
             ;
     }
 
@@ -69,6 +71,7 @@ class ContactAdmin extends AbstractAdmin
             ->add('name')
             ->add('email')
             ->add('interest.name')
+            ->add('answered')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -88,6 +91,7 @@ class ContactAdmin extends AbstractAdmin
             ->add('phone')
             ->add('message')
             ->add('interest.name')
+            ->add('answered')
         ;
     }
 

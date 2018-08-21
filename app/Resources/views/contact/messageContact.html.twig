@@ -1,40 +1,67 @@
 {% extends 'templates/base.html.twig' %}
 {% block body %}
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="form-group">
-                        {{ form_start(form) }}
-                            {{ form_label(form.name) }}:
-                            {{ form_widget(form.name) }}
-                            {{ form_errors(form.name) }}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    {{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
 
-                            {{ form_label(form.email) }}:
-                            {{ form_widget(form.email) }}
-                            {{ form_errors(form.email) }}
-
-                            {{ form_label(form.phone) }}:
-                            {{ form_widget(form.phone) }}
-                            {{ form_errors(form.phone) }}
-
-                            {{ form_label(form.message) }}:
-                            {{ form_widget(form.message) }}
-                            {{ form_errors(form.message) }}
-
-                            {{ form_label(form.interest) }}:
-                            {{ form_widget(form.interest) }}
-                            {{ form_errors(form.interest) }}
-
-                            <div class="mt-3">
-                                <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-envelope"></i> Enviar
-                                </button>
+                        {{ form_label(form.name) }}: *
+                        {{ form_widget(form.name) }}
+                        {% if not form.name.vars.valid %}
+                            <div class="message-error">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Debe ingresar un nombre.
                             </div>
-                        {{ form_end(form) }}
-                    </div>
+                        {% endif %}
+
+                        {{ form_label(form.email) }}: *
+                        {{ form_widget(form.email) }}
+                        {% if not form.email.vars.valid %}
+                            <div class="message-error">
+                                <i class="fas fa-exclamation-circle"></i>
+                                La dirección de correo electrónico ingresada no es válida.
+                            </div>
+                        {% endif %}
+
+                        {{ form_label(form.phone) }}:
+                        {{ form_widget(form.phone) }}
+                        {% if not form.phone.vars.valid %}
+                            <div class="message-error">
+                                <i class="fas fa-exclamation-circle"></i>
+                                El número telfónico debe de ser igual o mayor a 8 digitos.
+                            </div>
+                        {% endif %}
+
+                        {{ form_label(form.message) }}: *
+                        {{ form_widget(form.message) }}
+                        {% if not form.message.vars.valid %}
+                            <div class="message-error">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Debe ingresar un mensaje.
+                            </div>
+                        {% endif %}
+
+                        {{ form_label(form.interest) }}:
+                        {{ form_widget(form.interest) }}
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-envelope"></i> Enviar
+                            </button>
+                        </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact-form">
+                    <i class="fas fa-question"></i>
+                    <h4>¡En Accountyzer queremos ayudarte!</h4>
+                    <p>Envíanos un mensaje con las dudas que tengas y te responderemos pronto</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}

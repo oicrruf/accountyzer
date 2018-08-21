@@ -28,6 +28,7 @@
       </options>
     </field>
     <field name="createdAt" type="datetime" column="created_at" nullable="true"/>
+    <field name="answered" type="boolean" column="answered" nullable="true"/>
     <many-to-one field="interest" target-entity="Service" fetch="LAZY">
       <join-columns>
         <join-column name="interest" referenced-column-name="id"/>

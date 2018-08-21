@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Contact
@@ -15,21 +16,29 @@ class Contact
 {
     /**
      * @var string
+     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @var string
+     * @Assert\Email(
+     *     checkMX = true
+     * )
      */
     private $email;
 
     /**
      * @var string|null
+     * @Assert\Length(
+     *      min = 8
+     * )
      */
     private $phone;
 
     /**
      * @var string
+     * @Assert\NotBlank()
      */
     private $message;
 
@@ -42,6 +51,11 @@ class Contact
      * @var \AppBundle\Entity\Service
      */
     private $interest;
+
+    /**
+     * @var bool|null
+     */
+    private $answered;
 
     /**
      * @var \DateTime
@@ -211,5 +225,29 @@ class Contact
     public function setCreatedAtValue()
     {
         $this->createdAt = new \DateTime();
+    }
+
+    /**
+     * Set answered.
+     *
+     * @param bool|null $answered
+     *
+     * @return Contact
+     */
+    public function setAnswered($answered = null)
+    {
+        $this->answered = $answered;
+
+        return $this;
+    }
+
+    /**
+     * Get answered.
+     *
+     * @return bool|null
+     */
+    public function getAnswered()
+    {
+        return $this->answered;
     }
 }
