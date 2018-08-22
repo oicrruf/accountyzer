@@ -90,6 +90,19 @@ sonata_core:
 
 #Sonata Admin Bundle 
 sonata_admin:
+    dashboard:
+        blocks:
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [Servicios]
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [Mensajes]
+
     global_search:
         empty_boxes: fade
     
@@ -105,6 +118,7 @@ sonata_admin:
 sonata_block:
     default_contexts: [cms]
     blocks:
+        sonata.block.service.text:
         sonata.admin.block.admin_list:
             contexts:   [admin]
         sonata.admin.block.search_result:
@@ -149,7 +163,6 @@ sonata_seo:
             property:
                 'site_name':       Accountyzer
                 'author':          VKINGS.NET by Victor M. Reyes
-                'theme-color':     '#343a40'
                 'description':     ¿Quienes somos? 
                 # Facebook application settings
                 #'fb:app_id':          XXXXXX

@@ -20,21 +20,33 @@ class ContactType extends AbstractType
         $builder
             ->add('name', TextType::class, array(
                 'label'     => 'Nombre',
-                'attr'      => array('class' => 'form-control'),
-                'required'  => true                
+                'attr'      => array(
+                    'class' => 'form-control', 
+                    'placeholder' => 'Ingrese su nombre'
+                    ),
+                'required'  => true
             ))
             ->add('email', TextType::class, array(
                 'label'     => 'Correo electrónico',
-                'attr'      => array('class' => 'form-control'),
+                'attr'      => array(
+                    'class' => 'form-control', 
+                    'placeholder' => 'Ingrese su correo electrónico'
+                    ),
                 'required'  => true                
             ))
             ->add('phone', TextType::class, array(
                 'label'     => 'Teléfono',
-                'attr'      => array('class' => 'form-control'),
+                'attr'      => array(
+                    'class' => 'form-control', 
+                    'placeholder' => 'Ingrese su número telefónico'
+                    ),
                 'required'  => false                
             ))
             ->add('message', TextareaType::class, array(
-                'attr'      => array('class' => 'form-control'),
+                'attr'      => array(
+                    'class' => 'form-control',
+                    'placeholder' => 'Escriba su mensaje'
+                ),
                 'required'  => true                
             ))
             ->add('interest', EntityType::class, array(

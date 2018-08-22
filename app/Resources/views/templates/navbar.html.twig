@@ -2,14 +2,13 @@
     <div class="container">
         <a class="navbar-brand" href="{{ path('app_index') }}">
             <div class="navbar-title">
-                <img src="{{ asset('/images/logo-accountyzer-white.svg')}}" style="height: 25px; margin-right: 5px"/>
+                <img src="{{ asset('/images/logo-accountyzer-white.svg')}}" style="height: 25px; margin-right: 5px; margin-top: -5px"/>
                 Accountyzer
             </div>    
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {% if app.request.pathinfo == '/' %}active{% endif %}">

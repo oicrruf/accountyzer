@@ -94,4 +94,9 @@ class ServiceDetail
     {
         return $this->service;
     }
+
+    public function __toString()
+    {
+        return (string) $this->name;
+    }
 }
