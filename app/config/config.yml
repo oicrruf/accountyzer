@@ -123,8 +123,8 @@ fos_user:
         user_manager: sonata.user.orm.user_manager
 
     from_email:
-        address: "%mailer_user%"
-        sender_name: "%mailer_user%"
+        address: "soporte@accountyzer.com"
+        sender_name: "Soporte Accountyzer"
 
 #Sonata User Bundle
 sonata_user:

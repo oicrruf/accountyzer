@@ -1,15 +1,40 @@
-{% extends 'templates/base.html.twig' %}
-{% block title %}{{ status_text|trans }} | Accountyzer{% endblock %}
-{% block body %}
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="error col-lg-12">
-                    <h1>{{ status_code }}</h1>
-                    <h2>{{ status_text }}</h2>
-                    <p>Es posible que el enlace que seleccionaste esté dañado o que se haya eliminado la página.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-{% endblock %}
+{% spaceless %}
+    <!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <title>{{ status_text|trans }} | Accountyzer</title>
+            <meta name="description" content="{{ status_code }} {{ status_text }}">
+            <meta name="author" content="Víctor M. Reyes">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon/favicon.ico') }}" />
+            {% block stylesheets %}
+                <link href="{{ asset('build/common.css') }}" rel="stylesheet" />
+                <link href="{{ asset('build/accountyzer.css') }}" rel="stylesheet" />
+            {% endblock %}
+        </head>
+        <body>
+            {% block navbar %}
+                {{ include('templates/navbar.html.twig')}}
+            {% endblock %}
+            {% block body %}
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="error col-lg-12">
+                                <h1>{{ status_code }}</h1>
+                                <h2>{{ status_text }}</h2>
+                                <p>Es posible que el enlace que seleccionaste esté dañado o que se haya eliminado la página.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endblock %}
+            {% block footer %}
+                {{ include('templates/footer.html.twig')}}
+            {% endblock %}
+            {% block javascripts %}
+            <script src="{{ asset('build/common.js') }}"></script>
+            {% endblock %}
+        </body>
+    </html>
+{% endspaceless %}
