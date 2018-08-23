@@ -3,75 +3,65 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Contact
- *
- * @ORM\Table(name="Contact")
- * @ORM\Entity
+ * Message
+ * 
+ * @ORM\Entity()
+ * @ORM\HasLifecycleCallbacks()
+ * 
  */
-class Contact
+
+class Message
 {
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false, unique=false)
+     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=100, nullable=false, unique=false)
+     * @Assert\Email(
+     *     checkMX = true
+     * )
      */
     private $email;
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name="phone", type="string", length=45, nullable=true, unique=false)
+     * @Assert\Length(
+     *      min = 8
+     * )
      */
     private $phone;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="message", type="string", length=45, nullable=false, unique=false)
+     * @Assert\NotBlank()
      */
     private $message;
 
     /**
      * @var \DateTime|null
-     *
-     * @ORM\Column(name="createdAt", type="datetime", nullable=true, unique=false)
      */
-    private $createdAt;
+    private $created_at;
 
     /**
      * @var bool|null
-     *
-     * @ORM\Column(name="answered", type="boolean", nullable=true, unique=false)
      */
     private $answered;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var \AppBundle\Entity\Service
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Service")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="interest_id", referencedColumnName="id")
-     * })
      */
-    private $interest;
+    private $service;
 
 
     /**
@@ -79,7 +69,7 @@ class Contact
      *
      * @param string $name
      *
-     * @return Contact
+     * @return Message
      */
     public function setName($name)
     {
@@ -103,7 +93,7 @@ class Contact
      *
      * @param string $email
      *
-     * @return Contact
+     * @return Message
      */
     public function setEmail($email)
     {
@@ -127,7 +117,7 @@ class Contact
      *
      * @param string|null $phone
      *
-     * @return Contact
+     * @return Message
      */
     public function setPhone($phone = null)
     {
@@ -151,7 +141,7 @@ class Contact
      *
      * @param string $message
      *
-     * @return Contact
+     * @return Message
      */
     public function setMessage($message)
     {
@@ -175,11 +165,11 @@ class Contact
      *
      * @param \DateTime|null $createdAt
      *
-     * @return Contact
+     * @return Message
      */
     public function setCreatedAt($createdAt = null)
     {
-        $this->createdAt = $createdAt;
+        $this->created_at = $createdAt;
 
         return $this;
     }
@@ -191,7 +181,7 @@ class Contact
      */
     public function getCreatedAt()
     {
-        return $this->createdAt;
+        return $this->created_at;
     }
 
     /**
@@ -199,7 +189,7 @@ class Contact
      *
      * @param bool|null $answered
      *
-     * @return Contact
+     * @return Message
      */
     public function setAnswered($answered = null)
     {
@@ -229,27 +219,27 @@ class Contact
     }
 
     /**
-     * Set interest.
+     * Set service.
      *
-     * @param \AppBundle\Entity\Service|null $interest
+     * @param \AppBundle\Entity\Service|null $service
      *
-     * @return Contact
+     * @return Message
      */
-    public function setInterest(\AppBundle\Entity\Service $interest = null)
+    public function setService(\AppBundle\Entity\Service $service = null)
     {
-        $this->interest = $interest;
+        $this->service = $service;
 
         return $this;
     }
 
     /**
-     * Get interest.
+     * Get service.
      *
      * @return \AppBundle\Entity\Service|null
      */
-    public function getInterest()
+    public function getService()
     {
-        return $this->interest;
+        return $this->service;
     }
 
     public function __toString() {
@@ -258,4 +248,5 @@ class Contact
         }
         return $this->name;
     }
+
 }

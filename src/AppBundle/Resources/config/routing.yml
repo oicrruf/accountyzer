@@ -8,4 +8,4 @@ app_service:
 
 #Contacto
 app_contact: 
-    resource: "@AppBundle/Resources/config/routing/contact.yml"
+    resource: "@AppBundle/Resources/config/routing/message.yml"

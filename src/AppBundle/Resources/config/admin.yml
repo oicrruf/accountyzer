@@ -23,13 +23,13 @@ services:
             - [ setTranslationDomain, [AppBundle]]
         public: true
     
-    app.admin.contact:
-        class: AppBundle\Admin\ContactAdmin
+    app.admin.message:
+        class: AppBundle\Admin\MessageAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Mensajes", label: "Mensajes", icon: "<i class=\"fa fa-envelope\"></i>" }
         arguments:
             - ~
-            - AppBundle\Entity\Contact
+            - AppBundle\Entity\Message
             - ~
         calls:
             - [ setTranslationDomain, [AppBundle]]

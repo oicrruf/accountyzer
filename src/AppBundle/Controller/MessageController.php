@@ -2,20 +2,20 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Contact;
+use AppBundle\Entity\Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-class ContactController extends Controller
+class MessageController extends Controller
 {
    
     public function newAction(Request $request)
     {
-        $contact = new Contact();
-        $form = $this->createForm('AppBundle\Form\ContactType', $contact);
+        $message = new Message();
+        $form = $this->createForm('AppBundle\Form\MessageType', $message);
         $form->handleRequest($request);
 
         $seoPage = $this->container->get('sonata.seo.page');
@@ -26,23 +26,29 @@ class ContactController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($contact);
+            $em->persist($message);
             $em->flush();
 
-            return $this->redirectToRoute('message_show', array('id' => $contact->getId()));
+            return $this->redirectToRoute('message_show', array('id' => $message->getId()));
         }
 
-        return $this->render('contact/messageContact.html.twig', array(
-            'contact' => $contact,
+        return $this->render('message/messageContact.html.twig', array(
+            'message' => $message,
             'form' => $form->createView(),
         ));
     }
 
     
-    public function showAction(Contact $contact)
+    public function showAction(Message $message)
     {
-        return $this->render('contact/confirmContact.html.twig', array(
-            'contact' => $contact,
+        $seoPage = $this->container->get('sonata.seo.page');
+
+        $seoPage
+            ->setTitle('Confirmación de Mensajes | Accountyzer')
+            ->addMeta('property', 'og:type', 'contact');
+
+        return $this->render('message/confirmContact.html.twig', array(
+            'message' => $message,
         ));
     }
 

@@ -2,50 +2,33 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Service
- *
- * @ORM\Table(name="Service")
- * @ORM\Entity
  */
 class Service
 {
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false, unique=false)
      */
     private $name;
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name="description", type="text", length=0, nullable=true, unique=false)
      */
     private $description;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="icon", type="string", length=50, nullable=false, unique=false)
      */
     private $icon;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="slug", type="string", length=255, nullable=false, unique=false)
      */
     private $slug;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 

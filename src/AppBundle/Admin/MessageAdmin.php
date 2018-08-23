@@ -23,7 +23,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 use AppBundle\Entity\Service;
 
-class ContactAdmin extends AbstractAdmin
+class MessageAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
@@ -43,7 +43,7 @@ class ContactAdmin extends AbstractAdmin
             ->add('message', TextType::class, array(
                 'disabled'  => 'true'
                 )) 
-            ->add('interest', EntityType::class, [
+            ->add('service', EntityType::class, [
                 'class' => Service::class,
                 'disabled'  => 'true'
             ])
@@ -59,7 +59,7 @@ class ContactAdmin extends AbstractAdmin
             ->add('email')
             ->add('phone')
             ->add('message')
-            ->add('interest.name')
+            ->add('service.name')
             ->add('answered')
             ;
     }
@@ -70,7 +70,7 @@ class ContactAdmin extends AbstractAdmin
             ->add('id')
             ->add('name')
             ->add('email')
-            ->add('interest.name')
+            ->add('service.name')
             ->add('answered')
             ->add('_action', null, [
                 'actions' => [
@@ -90,7 +90,7 @@ class ContactAdmin extends AbstractAdmin
             ->add('email')
             ->add('phone')
             ->add('message')
-            ->add('interest.name')
+            ->add('service.name')
             ->add('answered')
         ;
     }

@@ -2,39 +2,23 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * ServiceDetail
- *
- * @ORM\Table(name="ServiceDetail")
- * @ORM\Entity
  */
 class ServiceDetail
 {
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="text", nullable=false, unique=false)
      */
     private $name;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var \AppBundle\Entity\Service
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Service")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="service_id", referencedColumnName="id")
-     * })
      */
     private $service;
 

@@ -10,7 +10,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class ContactType extends AbstractType
+class MessageType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -49,7 +49,7 @@ class ContactType extends AbstractType
                 ),
                 'required'  => true                
             ))
-            ->add('interest', EntityType::class, array(
+            ->add('service', EntityType::class, array(
                 'label'     => 'Servicio relacionado',
                 'class'     =>  'AppBundle:Service', 
                 'attr'      => array('class' => 'form-control'),
@@ -62,7 +62,7 @@ class ContactType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Contact'
+            'data_class' => 'AppBundle\Entity\Message'
         ));
     }
 

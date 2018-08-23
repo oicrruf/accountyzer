@@ -42,4 +42,4 @@ monolog:
 
 remg_generator:
     entity:
-        configuration_format: annotation
+        configuration_format: xml
