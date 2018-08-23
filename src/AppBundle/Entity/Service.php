@@ -2,39 +2,56 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Service
+ *
+ * @ORM\Table(name="Service")
+ * @ORM\Entity
  */
 class Service
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false, unique=false)
      */
     private $name;
 
     /**
-     * @var string
+     * @var string|null
+     *
+     * @ORM\Column(name="description", type="text", length=0, nullable=true, unique=false)
      */
     private $description;
 
     /**
      * @var string
-     */
-    private $slug;
-
-    /**
-     * @var string
+     *
+     * @ORM\Column(name="icon", type="string", length=50, nullable=false, unique=false)
      */
     private $icon;
 
     /**
-     * @var integer
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255, nullable=false, unique=false)
+     */
+    private $slug;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -48,7 +65,7 @@ class Service
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -58,13 +75,13 @@ class Service
     }
 
     /**
-     * Set description
+     * Set description.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return Service
      */
-    public function setDescription($description)
+    public function setDescription($description = null)
     {
         $this->description = $description;
 
@@ -72,9 +89,9 @@ class Service
     }
 
     /**
-     * Get description
+     * Get description.
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
@@ -82,31 +99,7 @@ class Service
     }
 
     /**
-     * Set slug
-     *
-     * @param string $slug
-     *
-     * @return Service
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
-     * Set icon
+     * Set icon.
      *
      * @param string $icon
      *
@@ -120,7 +113,7 @@ class Service
     }
 
     /**
-     * Get icon
+     * Get icon.
      *
      * @return string
      */
@@ -130,9 +123,33 @@ class Service
     }
 
     /**
-     * Get id
+     * Set slug.
      *
-     * @return integer
+     * @param string $slug
+     *
+     * @return Service
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Get id.
+     *
+     * @return int
      */
     public function getId()
     {

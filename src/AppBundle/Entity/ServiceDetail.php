@@ -2,29 +2,45 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * ServiceDetail
+ *
+ * @ORM\Table(name="ServiceDetail")
+ * @ORM\Entity
  */
 class ServiceDetail
 {
     /**
      * @var string
+     *
+     * @ORM\Column(name="name", type="text", nullable=false, unique=false)
      */
     private $name;
 
     /**
-     * @var integer
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var \AppBundle\Entity\Service
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Service")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="service_id", referencedColumnName="id")
+     * })
      */
     private $service;
 
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -38,7 +54,7 @@ class ServiceDetail
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -48,23 +64,9 @@ class ServiceDetail
     }
 
     /**
-     * Set id
+     * Get id.
      *
-     * @param integer $id
-     *
-     * @return ServiceDetail
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -72,13 +74,13 @@ class ServiceDetail
     }
 
     /**
-     * Set service
+     * Set service.
      *
-     * @param \AppBundle\Entity\Service $service
+     * @param \AppBundle\Entity\Service|null $service
      *
      * @return ServiceDetail
      */
-    public function setService(\AppBundle\Entity\Service $service)
+    public function setService(\AppBundle\Entity\Service $service = null)
     {
         $this->service = $service;
 
@@ -86,17 +88,19 @@ class ServiceDetail
     }
 
     /**
-     * Get service
+     * Get service.
      *
-     * @return \AppBundle\Entity\Service
+     * @return \AppBundle\Entity\Service|null
      */
     public function getService()
     {
         return $this->service;
     }
 
-    public function __toString()
-    {
-        return (string) $this->name;
+    public function __toString() {
+        if(is_null($this->name)) {
+            return 'NULL';
+        }
+        return $this->name;
     }
 }

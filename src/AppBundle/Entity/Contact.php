@@ -3,66 +3,75 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Contact
- * 
- * @ORM\Entity()
- * @ORM\HasLifecycleCallbacks()
+ *
+ * @ORM\Table(name="Contact")
+ * @ORM\Entity
  */
-
 class Contact
 {
     /**
      * @var string
-     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false, unique=false)
      */
     private $name;
 
     /**
      * @var string
-     * @Assert\Email(
-     *     checkMX = true
-     * )
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=false, unique=false)
      */
     private $email;
 
     /**
      * @var string|null
-     * @Assert\Length(
-     *      min = 8
-     * )
+     *
+     * @ORM\Column(name="phone", type="string", length=45, nullable=true, unique=false)
      */
     private $phone;
 
     /**
      * @var string
-     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="message", type="string", length=45, nullable=false, unique=false)
      */
     private $message;
 
     /**
+     * @var \DateTime|null
+     *
+     * @ORM\Column(name="createdAt", type="datetime", nullable=true, unique=false)
+     */
+    private $createdAt;
+
+    /**
+     * @var bool|null
+     *
+     * @ORM\Column(name="answered", type="boolean", nullable=true, unique=false)
+     */
+    private $answered;
+
+    /**
      * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var \AppBundle\Entity\Service
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Service")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="interest_id", referencedColumnName="id")
+     * })
      */
     private $interest;
-
-    /**
-     * @var bool|null
-     */
-    private $answered;
-
-    /**
-     * @var \DateTime
-     * 
-     * @ORM\Column(name="created_at", type="datetime", nullable=true)
-     */
-    private $createdAt;
 
 
     /**
@@ -162,6 +171,54 @@ class Contact
     }
 
     /**
+     * Set createdAt.
+     *
+     * @param \DateTime|null $createdAt
+     *
+     * @return Contact
+     */
+    public function setCreatedAt($createdAt = null)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt.
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set answered.
+     *
+     * @param bool|null $answered
+     *
+     * @return Contact
+     */
+    public function setAnswered($answered = null)
+    {
+        $this->answered = $answered;
+
+        return $this;
+    }
+
+    /**
+     * Get answered.
+     *
+     * @return bool|null
+     */
+    public function getAnswered()
+    {
+        return $this->answered;
+    }
+
+    /**
      * Get id.
      *
      * @return int
@@ -195,64 +252,10 @@ class Contact
         return $this->interest;
     }
 
-    /**
-     * Set createdAt.
-     *
-     * @param \DateTime $createdAt
-     *
-     * @return Contact
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Get createdAt.
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @ORM\PrePersist
-     */
-    public function setCreatedAtValue()
-    {
-        $this->createdAt = new \DateTime();
-    }
-
-    /**
-     * Set answered.
-     *
-     * @param bool|null $answered
-     *
-     * @return Contact
-     */
-    public function setAnswered($answered = null)
-    {
-        $this->answered = $answered;
-
-        return $this;
-    }
-
-    /**
-     * Get answered.
-     *
-     * @return bool|null
-     */
-    public function getAnswered()
-    {
-        return $this->answered;
-    }
-
-    public function __toString()
-    {
-        return (string) $this->name;
+    public function __toString() {
+        if(is_null($this->name)) {
+            return 'NULL';
+        }
+        return $this->name;
     }
 }
