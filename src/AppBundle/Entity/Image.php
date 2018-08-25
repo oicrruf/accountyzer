@@ -86,7 +86,7 @@ class Image
         return $this->updated;
     }
 
-    const SERVER_PATH_TO_IMAGE_FOLDER = '/web/images';
+    const SERVER_PATH_TO_IMAGE_FOLDER = 'images';
 
     /**
      * Unmapped property to handle file uploads
