@@ -65,10 +65,15 @@ doctrine:
         entity_managers:
             default:
                 mappings:
+                    #metadata_cache_driver: apc
+                    #query_cache_driver: apc
+                    #result_cache_driver: apc
                     AppBundle: ~
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
                     ApplicationSonataUserBundle: ~
+                    SonataClassificationBundle: ~
+                    ApplicationSonataClassificationBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -182,3 +187,23 @@ sonata_seo:
             'xmlns':              http://www.w3.org/1999/xhtml
             'xmlns:og':           http://opengraphprotocol.org/schema/
             #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
+
+sonata_classification:
+    class:
+        tag:          Application\Sonata\ClassificationBundle\Entity\Tag
+        category:     Application\Sonata\ClassificationBundle\Entity\Category
+        collection:   Application\Sonata\ClassificationBundle\Entity\Collection
+
+    admin:
+        tag:
+            class:        Sonata\ClassificationBundle\Admin\TagAdmin
+            controller:   SonataAdminBundle:CRUD
+            translation:  SonataClassificationBundle
+        category:
+            class:        Sonata\ClassificationBundle\Admin\CategoryAdmin
+            controller:   SonataAdminBundle:CRUD
+            translation:  SonataClassificationBundle
+        collection:
+            class:        Sonata\ClassificationBundle\Admin\CollectionAdmin
+            controller:   SonataAdminBundle:CRUD
+            translation:  SonataClassificationBundle
