@@ -34,3 +34,10 @@ services:
         calls:
             - [ setTranslationDomain, [AppBundle]]
         public: true
+
+    app.admin.image:
+        class: AppBundle\Admin\ImageAdmin
+        arguments: [~, AppBundle\Entity\Image, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Image }
+        public: true

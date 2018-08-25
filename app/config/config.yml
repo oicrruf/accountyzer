@@ -72,8 +72,6 @@ doctrine:
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
                     ApplicationSonataUserBundle: ~
-                    SonataClassificationBundle: ~
-                    ApplicationSonataClassificationBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -95,6 +93,8 @@ sonata_core:
 
 #Sonata Admin Bundle 
 sonata_admin:
+    persist_filters: true
+    
     dashboard:
         blocks:
             -
@@ -187,23 +187,3 @@ sonata_seo:
             'xmlns':              http://www.w3.org/1999/xhtml
             'xmlns:og':           http://opengraphprotocol.org/schema/
             #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
-
-sonata_classification:
-    class:
-        tag:          Application\Sonata\ClassificationBundle\Entity\Tag
-        category:     Application\Sonata\ClassificationBundle\Entity\Category
-        collection:   Application\Sonata\ClassificationBundle\Entity\Collection
-
-    admin:
-        tag:
-            class:        Sonata\ClassificationBundle\Admin\TagAdmin
-            controller:   SonataAdminBundle:CRUD
-            translation:  SonataClassificationBundle
-        category:
-            class:        Sonata\ClassificationBundle\Admin\CategoryAdmin
-            controller:   SonataAdminBundle:CRUD
-            translation:  SonataClassificationBundle
-        collection:
-            class:        Sonata\ClassificationBundle\Admin\CollectionAdmin
-            controller:   SonataAdminBundle:CRUD
-            translation:  SonataClassificationBundle
