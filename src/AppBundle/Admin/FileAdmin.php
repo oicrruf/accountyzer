@@ -6,11 +6,11 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use AppBundle\Entity\Image;
+use AppBundle\Entity\File;
 
 
 
-class ImageAdmin extends AbstractAdmin
+class FileAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
@@ -18,6 +18,7 @@ class ImageAdmin extends AbstractAdmin
             ->add('file', FileType::class, [
                 'required' => false
             ])
+            ->add('alt')
         ;
     }
 

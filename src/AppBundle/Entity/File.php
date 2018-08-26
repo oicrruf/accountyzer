@@ -8,9 +8,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
- * Image
+ * File
  */
-class Image
+class File
 {
     /**
      * @var int
@@ -21,6 +21,11 @@ class Image
      * @var string
      */
     private $filename;
+
+    /**
+     * @var string
+     */
+    private $alt;
 
     /**
      * @var \DateTime
@@ -43,7 +48,7 @@ class Image
      *
      * @param string $filename
      *
-     * @return Image
+     * @return File
      */
     public function setFilename($filename)
     {
@@ -63,11 +68,35 @@ class Image
     }
 
     /**
+     * Set alt.
+     *
+     * @param string $alt
+     *
+     * @return File
+     */
+    public function setAlt($alt)
+    {
+        $this->alt = $alt;
+
+        return $this;
+    }
+
+    /**
+     * Get alt.
+     *
+     * @return string
+     */
+    public function getAlt()
+    {
+        return $this->alt;
+    }
+
+    /**
      * Set updated.
      *
      * @param \DateTime $updated
      *
-     * @return Image
+     * @return File
      */
     public function setUpdated($updated)
     {
@@ -75,7 +104,7 @@ class Image
 
         return $this;
     }
-
+    
     /**
      * Get updated.
      *
