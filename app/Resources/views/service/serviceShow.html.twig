@@ -4,6 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
+                {% if service.filename %}
+                    <img class="img-fluid" src="{{ asset('images/services/'~service.filename) }}" alt="{{ service.alt }}">
+                {% endif %}
                 <h1><i class="{{ service.icon }} fa-fw"></i> {{ service.name }}</h1>
                 <p>{{ service.description }}</p>
                 <ul class="fa-ul">

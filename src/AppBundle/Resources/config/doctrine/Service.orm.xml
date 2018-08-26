@@ -8,5 +8,12 @@
     <field name="description" type="text" column="description" length="0" nullable="true"/>
     <field name="icon" type="string" column="icon" length="50" nullable="false"/>
     <field name="slug" type="string" column="slug" length="255" nullable="false"/>
+    <field name="filename" type="string" column="filename" length="100" nullable="false"/>
+    <field name="alt" type="string" column="alt" length="255" nullable="true"/>
+    <field name="updated" type="datetime" column="updated" nullable="false"/>
+    <lifecycle-callbacks>
+        <lifecycle-callback type="prePersist" method="lifecycleFileUpload" />
+        <lifecycle-callback type="preUpdate" method="lifecycleFileUpload" />
+    </lifecycle-callbacks>
   </entity>
 </doctrine-mapping>

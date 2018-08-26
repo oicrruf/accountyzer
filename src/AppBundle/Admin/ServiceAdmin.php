@@ -14,6 +14,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ServiceAdmin extends AbstractAdmin
 {
@@ -50,6 +51,10 @@ class ServiceAdmin extends AbstractAdmin
             ->add('description', TextareaType::class)
             ->add('slug', TextType::class)
             ->add('icon', TextType::class)
+            ->add('file', FileType::class, [
+                'required' => false
+            ])
+            ->add('alt')
         ;
     }
 
@@ -61,5 +66,22 @@ class ServiceAdmin extends AbstractAdmin
             ->add('icon')
             ->add('slug')
         ;
+    }
+
+    public function prePersist($image)
+    {
+        $this->manageFileUpload($image);
+    }
+
+    public function preUpdate($image)
+    {
+        $this->manageFileUpload($image);
+    }
+
+    private function manageFileUpload($image)
+    {
+        if ($image->getFile()) {
+            $image->refreshUpdated();
+        }
     }
 }
