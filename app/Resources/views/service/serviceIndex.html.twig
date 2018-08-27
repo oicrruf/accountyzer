@@ -6,6 +6,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
+                        {% set img = 'images/services/'~service.filename %}
+                        <a class="service-home" href="{{ path('service_show', { 'slug': service.slug }) }}">
+                            <img class="img-fluid rounded shadow-sm" src="{{ asset(img|imagine_filter('680x388')) }}" alt="{{ service.alt }}">
+                        </a>
+                    </div>
+                    <div class="col-lg-7">
                         <a class="service-home" href="{{ path('service_show', { 'slug': service.slug }) }}">
                             <h2 class="mb-3">
                             <i class="{{ service.icon }} fa-fw"></i>
@@ -14,15 +20,7 @@
                         </a>
                         <p>{{ service.description }}</p>
                     </div>
-                    <div class="col-lg-7">
-                        <ul class="fa-ul">
-                            {% for d in detail %}
-                                {% if service.id == d.service.id %}
-                                    <li><span class="fa-li" style="font-size: 0.6rem; margin-top: 5px"><i class="fas fa-check"></i></span>{{ d.name }}</li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
         </section>

@@ -43,3 +43,6 @@ monolog:
 remg_generator:
     entity:
         configuration_format: xml
+
+web_profiler:
+    intercept_redirects: false

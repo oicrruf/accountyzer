@@ -35,4 +35,5 @@ desktop.ini
 vim.exe.stackdump
 
 #Carpetas de imagenes
-/web/images/services/
+/web/images/services/*
+/web/media/*

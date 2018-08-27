@@ -1,0 +1,20 @@
+liip_imagine:
+    filter_sets:
+        730x486:
+            quality: 90
+            filters:
+                thumbnail: { size: [730, 486.667], mode: outbound }
+
+        # name our filter set "my_crop_filter"
+        680x388:
+            quality: 90
+            filters:
+                thumbnail: { size: [690, 388.117], mode: outbound }
+                #thumbnail: { size: [445, 250.3], mode: outbound }
+                # use and setup the "crop" filter
+                #crop:
+                    # set the size of the cropping area
+                    #size: [ 1920, 1080 ]
+                    # set the starting coordinates of the crop
+                    #start: [ 0, 100 ]
+                    

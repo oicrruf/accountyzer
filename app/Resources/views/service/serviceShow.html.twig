@@ -5,9 +5,10 @@
         <div class="row">
             <div class="col-lg-8">
                 {% if service.filename %}
-                    <img class="img-fluid" src="{{ asset('images/services/'~service.filename) }}" alt="{{ service.alt }}">
+                    {% set img = 'images/services/'~service.filename %}
+                    <img class="img-fluid rounded shadow-sm" src="{{ asset(img|imagine_filter('730x486')) }}" alt="{{ service.alt }}">
                 {% endif %}
-                <h1><i class="{{ service.icon }} fa-fw"></i> {{ service.name }}</h1>
+                <h2 class="mt-4"><i class="{{ service.icon }} fa-fw"></i> {{ service.name }}</h2>
                 <p>{{ service.description }}</p>
                 <ul class="fa-ul">
                     {% for d in detail if service.id == d.service.id %}
@@ -16,12 +17,13 @@
                 </ul>
             </div>
             <div class="col-lg-4">
+                <h4 class="mb-3">| Otros servicios:</h4>
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+                    {% for s in allServices if s.id != service.id %}
+                        <a href="{{ path('service_show', { 'slug': s.slug }) }}" class="list-group-item list-group-item-action text-muted">
+                            <i class="{{ s.icon }} fa-fw"></i> {{ s.name }}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>

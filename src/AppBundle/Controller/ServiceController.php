@@ -61,10 +61,12 @@ class ServiceController extends Controller
 
         $deleteForm = $this->createDeleteForm($service);
         
+        $all_services = $em->getRepository('AppBundle:Service')->findAll();
         $services_detail = $em->getRepository('AppBundle:ServiceDetail')->findAll();
 
         return $this->render('service/serviceShow.html.twig', array(
             'service' => $service,
+            'allServices' => $all_services,
             'detail' => $services_detail,
             'delete_form' => $deleteForm->createView(),
         ));
