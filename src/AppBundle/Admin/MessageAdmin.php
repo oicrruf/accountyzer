@@ -70,6 +70,7 @@ class MessageAdmin extends AbstractAdmin
             ->add('id')
             ->add('name')
             ->add('email')
+            ->add('subject')
             ->add('service.name')
             ->add('answered')
             ->add('_action', null, [

@@ -33,6 +33,15 @@
                                 El número telfónico debe de ser igual o mayor a 8 digitos.
                             </div>
                         {% endif %}
+                        
+                        {{ form_label(form.subject) }}: *
+                        {{ form_widget(form.subject) }}
+                        {% if not form.subject.vars.valid %}
+                            <div class="message-error">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Debes escribir brevemente sobre que se trata tu mensaje.
+                            </div>
+                        {% endif %}
 
                         {{ form_label(form.message) }}: *
                         {{ form_widget(form.message) }}

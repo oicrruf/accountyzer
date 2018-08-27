@@ -34,10 +34,3 @@ services:
         calls:
             - [ setTranslationDomain, [AppBundle]]
         public: true
-
-    app.admin.file:
-        class: AppBundle\Admin\FileAdmin
-        arguments: [~, AppBundle\Entity\File, SonataAdminBundle:CRUD]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: Archivos, label: File }
-        public: true

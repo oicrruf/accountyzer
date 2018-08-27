@@ -42,6 +42,14 @@ class MessageType extends AbstractType
                     ),
                 'required'  => false                
             ))
+            ->add('subject', TextType::class, array(
+                'label'     => 'Asunto',
+                'attr'      => array(
+                    'class' => 'form-control', 
+                    'placeholder' => 'Ingrese el motivo por el cual nos contacta'
+                    ),
+                'required'  => true                
+            ))
             ->add('message', TextareaType::class, array(
                 'attr'      => array(
                     'class' => 'form-control',

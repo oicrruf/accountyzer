@@ -231,7 +231,7 @@ class Service
         return $this->updated;
     }
 
-    const SERVER_PATH_TO_IMAGE_FOLDER = 'images/services/';
+    const SERVER_PATH_TO_IMAGE_FOLDER = 'assets/images/services/';
 
     /**
      * Unmapped property to handle file uploads

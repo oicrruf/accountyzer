@@ -30,6 +30,12 @@ class Message
     private $email;
 
     /**
+     * @var string
+     * @Assert\NotBlank()
+     */
+    private $subject;
+
+    /**
      * @var string|null
      * @Assert\Length(
      *      min = 8
@@ -110,6 +116,30 @@ class Message
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set subject.
+     *
+     * @param string $subject
+     *
+     * @return Message
+     */
+    public function setSubject($subject)
+    {
+        $this->subject = $subject;
+
+        return $this;
+    }
+
+    /**
+     * Get subject.
+     *
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->subject;
     }
 
     /**

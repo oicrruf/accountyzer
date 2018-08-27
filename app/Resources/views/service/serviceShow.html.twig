@@ -5,10 +5,12 @@
         <div class="row">
             <div class="col-lg-8">
                 {% if service.filename %}
-                    {% set img = 'images/services/'~service.filename %}
+                    {% set img = 'assets/images/services/'~service.filename %}
                     <img class="img-fluid rounded shadow-sm" src="{{ asset(img|imagine_filter('730x486')) }}" alt="{{ service.alt }}">
                 {% endif %}
-                <h2 class="mt-4"><i class="{{ service.icon }} fa-fw"></i> {{ service.name }}</h2>
+                <div class="service-title">
+                    <h2 class="mt-4"><i class="{{ service.icon }} fa-fw"></i> {{ service.name }}</h2>
+                </div>
                 <p>{{ service.description }}</p>
                 <ul class="fa-ul">
                     {% for d in detail if service.id == d.service.id %}
@@ -17,7 +19,9 @@
                 </ul>
             </div>
             <div class="col-lg-4">
-                <h4 class="mb-3">| Otros servicios:</h4>
+                <div class="service-other">
+                    <h4>Otros servicios:</h4>
+                </div>
                 <div class="list-group">
                     {% for s in allServices if s.id != service.id %}
                         <a href="{{ path('service_show', { 'slug': s.slug }) }}" class="list-group-item list-group-item-action text-muted">

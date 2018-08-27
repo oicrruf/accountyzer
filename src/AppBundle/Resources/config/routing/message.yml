@@ -1,5 +1,5 @@
 message_new:
-    path:    contacto
+    path:    contactanos
     methods:  [GET, POST]
     defaults: { _controller: AppBundle:Message:new }
   
