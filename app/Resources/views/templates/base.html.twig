@@ -15,7 +15,9 @@
         {% block navbar %}
             {{ include('templates/navbar.html.twig')}}
         {% endblock %}
-        {% block body %}{% endblock %}
+        <div class="animated fadeIn">
+            {% block body %}{% endblock %}
+        </div>
         {% block footer %}
             {{ include('templates/footer.html.twig')}}
         {% endblock %}
