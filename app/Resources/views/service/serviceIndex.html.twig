@@ -2,20 +2,20 @@
 {% block title %}Servicios | Accountyzer {% endblock %}
 {% block body %}
     {% for service in services %}
-        <section>
-            <div class="container">
+        <section class="services">
+            <div class="container animated fadeIn">
                 <div class="row">
                     <div class="col-lg-5">
                         {% set img = 'assets/images/services/'~service.filename %}
-                        <a class="service-home" href="{{ path('service_show', { 'slug': service.slug }) }}">
+                        <a class="img-fluid" href="{{ path('service_show', { 'slug': service.slug }) }}">
                             <img class="img-fluid rounded shadow-sm" src="{{ asset(img|imagine_filter('680x388')) }}" alt="{{ service.alt }}">
                         </a>
                     </div>
                     <div class="col-lg-7">
-                        <a class="service-home" href="{{ path('service_show', { 'slug': service.slug }) }}">
+                        <a class="service-home-title" href="{{ path('service_show', { 'slug': service.slug }) }}">
                             <h2 class="mb-3">
-                            <i class="{{ service.icon }} fa-fw"></i>
-                            {{ service.name }}
+                                <i class="{{ service.icon }} fa-fw"></i>
+                                {{ service.name }}
                             </h2>
                         </a>
                         <p>{{ service.description }}</p>

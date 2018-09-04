@@ -11,6 +11,12 @@
     "url-loader": "^1.0.1",
     "webpack-notifier": "^1.6.0"
   },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production"
+  },
   "name": "accountyzer",
   "version": "1.0.0",
   "main": "index.js",

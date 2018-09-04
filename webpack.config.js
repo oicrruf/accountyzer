@@ -10,7 +10,7 @@ Encore
         images: { limit: 10240 }
     })
     .addEntry('common', './assets/js/common.js')
-    .addEntry('accountyzer', './assets/js/accountyzer.js')
+    .addEntry('custom', './assets/js/custom.js')
     .autoProvidejQuery()
     .enableVersioning()
     .enableVersioning(Encore.isProduction())

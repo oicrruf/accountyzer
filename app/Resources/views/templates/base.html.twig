@@ -8,16 +8,14 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon/favicon.ico') }}" />
         {% block stylesheets %}
             <link href="{{ asset('build/common.css') }}" rel="stylesheet" />
-            <link href="{{ asset('build/accountyzer.css') }}" rel="stylesheet" />
+            <link href="{{ asset('build/custom.css') }}" rel="stylesheet" />
         {% endblock %}
     </head>
     <body>
         {% block navbar %}
             {{ include('templates/navbar.html.twig')}}
         {% endblock %}
-        <div class="animated fadeIn">
             {% block body %}{% endblock %}
-        </div>
         {% block footer %}
             {{ include('templates/footer.html.twig')}}
         {% endblock %}
