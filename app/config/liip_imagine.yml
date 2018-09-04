@@ -4,7 +4,11 @@ liip_imagine:
             quality: 90
             filters:
                 thumbnail: { size: [730, 486.667], mode: outbound }
-
+        
+        400x400:
+            quality: 90
+            filters:
+                thumbnail: { size: [400, 400], mode: outbound }
         # name our filter set "my_crop_filter"
         680x388:
             quality: 90

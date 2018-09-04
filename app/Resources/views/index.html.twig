@@ -65,12 +65,17 @@
         </section>
         <section>
             <div class="container">
+            <h1>¿Quiénes somos?</h1>
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1>¿Quiénes somos?</h1>
+                    <div class="col-lg-9">
                         {% for i in information %}
                             <p>{{ i.aboutUS }}</p>
                         {% endfor %}
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="about-us">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,7 +113,15 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Nuestros Clientes</h1>
-                        <p>Imágen 1</p>
+                        <div class="row">
+                        {% for c in client %}
+                            <div class="col-sm-12 col-lg-2">
+                                {% set img = 'assets/images/clients/'~c.filename %}
+                                <img class="gray img-fluid rounded shadow-sm mt-3" src="{{ asset(img|imagine_filter('400x400')) }}" alt="{{ c.alt }}">
+                                <h5 class="mt-3">{{ c.name }}</h5>
+                            </div>
+                        {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,7 +135,7 @@
                             <p class="mb-3">{{ i.address }}</p>
                             {{ i.city }}, {{ i.state }}
                             <h5 class="mt-5">Teléfono:</h5>                            
-                            +503 {{i.phone}}
+                            <p>+503 {{i.phone}}</p>
                         {% endfor %}
                     </div>
                     <div class="col-lg-8">

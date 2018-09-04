@@ -37,3 +37,6 @@ vim.exe.stackdump
 #Carpetas de imagenes
 /web/images/services/*
 /web/media/*
+
+#Yarn 
+yarn-error.log

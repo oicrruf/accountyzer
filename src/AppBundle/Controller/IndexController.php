@@ -16,6 +16,7 @@ class IndexController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $services = $em->getRepository('AppBundle:Service')->findAll();
+        $client = $em->getRepository('AppBundle:Client')->findAll();
         $information = $em->getRepository('AppBundle:Information')->findAll();
 
         $seoPage = $this->container->get('sonata.seo.page');
@@ -26,7 +27,8 @@ class IndexController extends Controller
 
         return $this->render('index.html.twig', array(
             'services' => $services,
-            'information' => $information
+            'information' => $information,
+            'client' => $client
         ));
     }
     

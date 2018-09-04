@@ -41,3 +41,10 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Información", label: "Información", icon: "<i class=\"fa fa-info\"></i>" }
         public: true
+
+    app.admin.client:
+        class: AppBundle\Admin\ClientAdmin
+        arguments: [~, AppBundle\Entity\Client, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Client }
+        public: true

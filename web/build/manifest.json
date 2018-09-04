@@ -1,7 +1,14 @@
 {
-  "build/common.js": "http://localhost:8080/build/common.js",
-  "build/common.css": "http://localhost:8080/build/common.css",
-  "build/custom.js": "http://localhost:8080/build/custom.js",
-  "build/custom.css": "http://localhost:8080/build/custom.css",
-  "build/images/accountyzer-banner.jpg": "http://localhost:8080/build/images/accountyzer-banner.9be58d3d.jpg"
+  "build/common.js": "/build/common.62319f27.js",
+  "build/common.css": "/build/common.49babbfa.css",
+  "build/custom.js": "/build/custom.b459e7d6.js",
+  "build/custom.css": "/build/custom.4a3cc26b.css",
+  "build/fonts/fa-brands-400.ttf": "/build/fonts/fa-brands-400.fdf44bc4.ttf",
+  "build/images/accountyzer-banner.jpg": "/build/images/accountyzer-banner.9be58d3d.jpg",
+  "build/fonts/fa-solid-900.ttf": "/build/fonts/fa-solid-900.132e9759.ttf",
+  "build/fonts/fa-brands-400.eot": "/build/fonts/fa-brands-400.e8019d50.eot",
+  "build/fonts/fa-solid-900.eot": "/build/fonts/fa-solid-900.ea363ed4.eot",
+  "build/images/fa-regular-400.svg": "/build/images/fa-regular-400.ba2a91dc.svg",
+  "build/images/fa-solid-900.svg": "/build/images/fa-solid-900.de1d242d.svg",
+  "build/images/fa-brands-400.svg": "/build/images/fa-brands-400.83e6c29f.svg"
 }
