@@ -68,7 +68,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>¿Quiénes somos?</h1>
-                        <p>Texo de quiénes somos.</p>
+                        {% for i in information %}
+                            <p>{{ i.aboutUS }}</p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -78,11 +80,15 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h1>Misión</h1>
-                        <p>Prestar servicios de alta calidad, con sentido común y sentido de negocios, que permitan a nuestros clientes alcanzar sus objetivos de forma más segura, eficiente y rápida posible.</p>
+                        {% for i in information %}
+                            <p>{{ i.mission }}</p>
+                        {% endfor %}
                     </div>
                     <div class="col-lg-6">
                         <h1>Visión</h1>
-                        <p>Ser una empresa reconocida, por la excelencia, calidad humana, y facilitadores del éxito empresarial de sus clientes; por la preparación, conocimiento, experiencia y ética de sus socios, asociados y colaboradores; y por la certeza, velocidad, eficacia, valor y confiabilidad de sus servicios.</p>
+                        {% for i in information %}
+                            <p>{{ i.vision }}</p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -112,17 +118,19 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <h1>¿Cómo llegar?</h1>
-                        <p>Camino Viejo a Tesistan 2255-B, <br/>
-                        Jardines del Valle, <br/>
-                        45138 Zapopan, <br/>
-                        <strong>
-                        Jal., México
-                        </strong>
-                        </P>
-                        * Dirección y mapa de ejemplo
+                        {% for i in information %}
+                            <p class="mb-3">{{ i.address }}</p>
+                            {{ i.city }}, {{ i.state }}
+                            <h5 class="mt-5">Teléfono:</h5>                            
+                            +503 {{i.phone}}
+                        {% endfor %}
                     </div>
                     <div class="col-lg-8">
-                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.977469111839!2d-103.43225458453415!3d20.751707286149113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af5f90fc0cf3%3A0x1f3db591dfcd9b42!2sSINERGIA+CONSULTORES+BIENES+%26+RAICES!5e0!3m2!1ses-419!2ssv!4v1534184493043" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        {% for i in information %}
+                            <div class="map">
+                                {{ i.map|raw }}
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

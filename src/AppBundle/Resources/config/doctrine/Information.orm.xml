@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Information" table="information">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="about_us" type="text" column="about_us" nullable="true"/>
+    <field name="vision" type="text" column="vision" nullable="true"/>
+    <field name="mission" type="text" column="mission" nullable="true"/>
+    <field name="address" type="string" column="address" length="255" nullable="true"/>
+    <field name="city" type="string" column="city" length="100" nullable="true"/>
+    <field name="state" type="string" column="state" length="100" nullable="true"/>
+    <field name="map" type="text" column="map" nullable="true"/>
+    <field name="phone" type="string" column="phone" length="25" nullable="true"/>
+  </entity>
+</doctrine-mapping>

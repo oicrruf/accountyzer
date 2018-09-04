@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 use AppBundle\Entity\Service;
-use AppBundle\Entity\ServiceDetail;
+use AppBundle\Entity\Information;
 
 class IndexController extends Controller
 {
@@ -16,7 +16,7 @@ class IndexController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $services = $em->getRepository('AppBundle:Service')->findAll();
-        $services_detail = $em->getRepository('AppBundle:ServiceDetail')->findAll();
+        $information = $em->getRepository('AppBundle:Information')->findAll();
 
         $seoPage = $this->container->get('sonata.seo.page');
 
@@ -26,7 +26,7 @@ class IndexController extends Controller
 
         return $this->render('index.html.twig', array(
             'services' => $services,
-            'detail' => $services_detail
+            'information' => $information
         ));
     }
     
