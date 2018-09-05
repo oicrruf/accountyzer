@@ -1,9 +1,9 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark shadow">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light shadow-sm" style="background-color: #fff;">
     <div class="container">
         <a class="navbar-brand" href="{{ path('app_index') }}">
             <div class="navbar-title">
-                <img src="{{ asset('/images/logo-accountyzer-white.svg')}}" style="height: 25px; margin-right: 5px; margin-top: -5px"/>
-                Accountyzer
+                {# <img src="{{ asset('/images/logo-accountyzer-black.svg')}}" style="height: 25px; margin-right: 5px; margin-top: -5px"/> #}
+                <span style="color: #5B37AB">Accountyzer</span>
             </div>    
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,9 +57,9 @@
             {% if app.user %}
                 <span class="navbar-text">
                     <div class="dropdown">
-                        <a class="btn btn-danger  btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{app.user}} 
-                            <i class="far fa-user-circle" style="color: #fff"></i>
+                            <i class="far fa-user-circle" style="color: #000"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" style="color: #000" href="{{ path('sonata_admin_dashboard')}}">

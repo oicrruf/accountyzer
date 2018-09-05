@@ -64,10 +64,33 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="contact-form">
-                    <i class="fas fa-question"></i>
-                    <h4>¡En Accountyzer queremos ayudarte!</h4>
-                    <p>Envíanos un mensaje con las dudas que tengas y te responderemos pronto</p>
+                <h3>¿Cómo llegar?</h3>
+                {% for i in information %}
+                    <div class="map" style="height: 200px">
+                        {{ i.map|raw }}
+                    </div>
+                {% endfor %}
+                           
+                <div class="contact-info">
+                <h5>Dirección:</h5>   
+                    <address>
+                        {% for i in information %}
+                            <p class="mb-3">{{ i.address|raw }}</p>
+                            {{ i.city }}, {{ i.state }}
+                        {% endfor %}
+                    </address>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {% for i in information %}
+                                <h5>Teléfono:</h5>                            
+                                <p>+503 {{i.phone}}</p>
+                            {% endfor %}
+                        </div>                
+                        <div class="col-lg-6">            
+                            <h5>Correo electrónico:</h5>                            
+                            <a href="mailto:soporte@accountyzer.com">soporte@accountyzer.com</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,13 +6,24 @@
 @import '_img'
 
 body
-    font-family: 'Fira Sans', sans-serif
     font-size: 16px
+    color: #6f6485
     font-weight: 200
+
+
+h1,
+h2, 
+h3, 
+h4, 
+h4
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400
+    color: #25114C
 
 @media only screen and (max-width: 600px) 
     body 
-        font-size: 14px
+        font-size: 15px
+    
 a
     color: #000
 
@@ -30,13 +41,20 @@ section
     h5
         font-size: 1.1rem
     p
-        margin-top: 25px
+        margin-top: 15px
         line-height: 1.6rem
-        margin-bottom: 35px
 
 .map
-    border-radius: 5px
-    height: 100%
+    iframe 
+        margin-top: 10px
+        border-radius: 10px
+        
+.map.contact 
+    iframe 
+        margin-top: 30px
+
+.contact-info 
+    margin-top: 40px
 
 .error 
     h1 
@@ -88,39 +106,16 @@ section
     color: $red
     font-weight: 400
 
-.service-other
-    border-left: 8px solid #8e8e8f  
-    border-top: 1px solid #ddd 
-    border-right: 1px solid #ddd 
-    border-bottom: 1px solid #ddd 
-    padding-left: 10px
-    border-radius: 5px
-    margin-bottom: 20px
-    color: #585862 
-    height: 3rem
-    h4 
-        line-height: 3rem 
-
-.service-title
-    border-left: 10px solid $red-dark
-    padding-left: 10px
-    border-radius: 5px
-    margin-bottom: 20px
-    color: #585862     
-    height: 4rem
-    h2 
-        line-height: 4rem
-
-.banner
+.header
     h1 
         font-size: 3rem
-        font-weight: 300
+        font-weight: 500
         margin-bottom: 15px
         text-shadow: 2px 2px #7f7f7f
         span 
             font-weight: 500
     p
-        font-size: 1.3rem
+        font-size: 1.1rem
     background-image: url('../images/accountyzer-banner.jpg')
     max-width: 100%
     position: relative
@@ -128,7 +123,7 @@ section
     z-index: 1
     color: #fff
     padding-top: 7rem
-    height: 37vh
+    height: 350px
     background-position: center center
     &:after 
         content: "";
@@ -147,7 +142,7 @@ section
         p
             font-size: 1.2rem
         padding-top: 6.8rem
-        height: 65vh
+        height: 100vh
         background-position: center center
  
 .about-us
@@ -156,3 +151,6 @@ section
     color: $gray
     &:hover 
         color: #000000
+
+address
+    margin-bottom: 20px

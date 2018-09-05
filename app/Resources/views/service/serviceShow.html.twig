@@ -8,9 +8,11 @@
                     {% set img = 'assets/images/services/'~service.filename %}
                     <img class="img-fluid rounded shadow-sm" src="{{ asset(img|imagine_filter('730x486')) }}" alt="{{ service.alt }}">
                 {% endif %}
+                
                 <div class="service-title">
-                    <h2 class="mt-4"><i class="{{ service.icon }} fa-fw"></i> {{ service.name }}</h2>
+                    <h1 class="mt-4"><i class="{{ service.icon }} fa-fw"></i> {{ service.name }}</h1>
                 </div>
+                
                 <p>{{ service.description }}</p>
                 <ul class="fa-ul">
                     {% for d in detail if service.id == d.service.id %}

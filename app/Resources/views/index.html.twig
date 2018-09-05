@@ -1,10 +1,10 @@
 {% extends 'templates/base.html.twig' %}
 {% block body %}
     <div class="animated fadeIn">
-        <div class="banner shadow-sm">
+        <div class="header shadow-sm">
             <div class="container">
-                <h1>¡Bienvenido a <span>Accountyzer</span>!</h1>
-                <p>Texto descriptivo del contenido del sitio web, servicios y productos</p>
+                <h1>Accountyzer</h1>
+                <p>Sinérgica consultores, es una compañía especializada comprometida con la entrega de calidad, conformada por socios y asociados que cuentan con más de 25 años de experiencia en las áreas de impuestos, auditoría, finanzas y contabilidad.</p>
             </div>
         </div>
         {#
@@ -69,7 +69,7 @@
                 <div class="row">
                     <div class="col-lg-9">
                         {% for i in information %}
-                            <p>{{ i.aboutUS }}</p>
+                            <p>{{ i.aboutUS|raw }}</p>
                         {% endfor %}
                     </div>
                     <div class="col-lg-3">
@@ -108,39 +108,54 @@
                 </div>
             </div>
         </section>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Nuestros Clientes</h1>
+        {% for c in client %}
+            {% if loop.index == 1 %}
+                <section>
+                    <div class="container">
                         <div class="row">
-                        {% for c in client %}
-                            <div class="col-sm-12 col-lg-2">
-                                {% set img = 'assets/images/clients/'~c.filename %}
-                                <img class="gray img-fluid rounded shadow-sm mt-3" src="{{ asset(img|imagine_filter('400x400')) }}" alt="{{ c.alt }}">
-                                <h5 class="mt-3">{{ c.name }}</h5>
+                            <div class="col-lg-12">
+                                <h1>Nuestros Clientes</h1>
+                                <div class="row">
+                                    {% if loop.index == 1 %}
+                                        {% for c in client %}
+                                            <div class="col-sm-12 col-lg-2">
+                                                {% set img = 'assets/images/clients/'~c.filename %}
+                                                <img class="gray img-fluid rounded shadow-sm mt-3" src="{{ asset(img|imagine_filter('400x400')) }}" alt="{{ c.alt }}">
+                                                <h5 class="mt-3">{{ c.name }}</h5>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
                             </div>
-                        {% endfor %}
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
+            {% endif %}
+        {% endfor %}
         <section>
             <div class="container">
+            <h1 class="mb-4">¿Cómo llegar?</h1>
                 <div class="row">
-                    <div class="col-lg-4">
-                        <h1>¿Cómo llegar?</h1>
+                    <div class="col-lg-6">
+                        <h5>Dirección:</h5>
+                        <address>
+                            {% for i in information %}
+                                <p class="mb-2">{{ i.address|raw }}</p>
+                                {{ i.city }}, {{ i.state }}
+                            {% endfor %}
+                        </address>
+                        </div>
+                        <div class="col-lg-6">
                         {% for i in information %}
-                            <p class="mb-3">{{ i.address }}</p>
-                            {{ i.city }}, {{ i.state }}
-                            <h5 class="mt-5">Teléfono:</h5>                            
+                            <h5>Teléfono:</h5>                            
                             <p>+503 {{i.phone}}</p>
                         {% endfor %}
+                        <h5>Correo electrónico:</h5>                            
+                        <a href="mailto:soporte@accountyzer.com">soporte@accountyzer.com</a>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-12 mb-4">
                         {% for i in information %}
-                            <div class="map">
+                            <div class="map" style="height: 250px">
                                 {{ i.map|raw }}
                             </div>
                         {% endfor %}
@@ -148,5 +163,6 @@
                 </div>
             </div>
         </section>
+        
     </div>
 {% endblock %}

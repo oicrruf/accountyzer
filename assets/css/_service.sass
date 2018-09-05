@@ -1,10 +1,47 @@
+.services 
+    p
+        font-size: 0.95rem
+        line-height: 1.3rem
+    a   
+        
+        text-decoration: none
+        &:hover 
+            font-weight: 500
+            color: $red
+    .see-more
+        font-size: 0.95rem
+        i 
+            margin-left: 15px
+
 .service-home-title
     h2
-        font-size: 2rem 
+        margin-top: 20px
+        font-size: 1.4rem 
     color: $red
     &:hover 
         color: $red
         text-decoration: none
 
-        
-    
+.service-other
+    border-left: 8px solid #8e8e8f  
+    border-top: 1px solid #ddd 
+    border-right: 1px solid #ddd 
+    border-bottom: 1px solid #ddd 
+    padding-left: 10px
+    border-radius: 5px
+    margin-bottom: 20px
+    color: #585862 
+    height: 3rem
+    h4 
+        line-height: 3rem 
+
+.service-title
+    padding-left: 10px
+    border-radius: 5px
+    margin-bottom: 20px
+    color: $red-dark     
+
+@media only screen and (max-width: 600px) 
+    .service-title
+        h1
+            font-size: 1.2rem

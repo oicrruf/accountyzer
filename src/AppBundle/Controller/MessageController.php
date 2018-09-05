@@ -14,6 +14,9 @@ class MessageController extends Controller
    
     public function newAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $information = $em->getRepository('AppBundle:Information')->findAll();
+
         $message = new Message();
         $form = $this->createForm('AppBundle\Form\MessageType', $message);
         $form->handleRequest($request);
@@ -35,6 +38,7 @@ class MessageController extends Controller
         return $this->render('message/messageContact.html.twig', array(
             'message' => $message,
             'form' => $form->createView(),
+            'information' => $information,
         ));
     }
 
