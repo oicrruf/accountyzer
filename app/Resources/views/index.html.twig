@@ -4,86 +4,54 @@
         <div class="header">
             <div class="container">
                 <div class="row">
-                <div class="col-lg-8 pt-5">
-                    <h1>Accountyzer</h1>
-                    <p>Sinérgica consultores, es una compañía especializada comprometida con la entrega de calidad, conformada por socios y asociados que cuentan con más de 25 años de experiencia en las áreas de impuestos, auditoría, finanzas y contabilidad.</p>
-                </div>
-                <div class="col-lg-4">
-                    <img src="{{ asset('assets/banner.svg')}}" />
-                </div>
+                    <div class="col-lg-8">
+                        <h1 class="mt-9">Accountyzer</h1>
+                        <p>Sinérgica consultores, es una compañía especializada comprometida con la entrega de calidad, conformada por socios y asociados que cuentan con más de 25 años de experiencia en las áreas de impuestos, auditoría, finanzas y contabilidad.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="img-fluid" src="{{ asset('assets/banner.svg')}}" />
+                    </div>
                 </div>
             </div>
         </div>
-        {#
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('/images/example-banner-1.jpg')}}" alt="First slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        #}
         <section>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>¿Qué hay de nuevo?</h1>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 mt-3">
-                        <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-danger">Go somewhere</a>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 mt-3">
-                        <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-danger">Go somewhere</a>
-                        </div>
+                    <div class="col-sm-12 col-md-12 col-lg-5 mt-3">
+                        <div class="card shadow-sm zoom">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural lead-in to additional content. With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 mt-3">
-                        <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-danger">Go somewhere</a>
+                    <div class="col-lg-7">
+                        <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                            <div class="card shadow-sm zoom row">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
                         </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                            <div class="card shadow-sm zoom row">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-4">
-                    <a href="#">Ver más <i class="fas fa-chevron-right"></i></a>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="container">
-            <h1>¿Quiénes somos?</h1>
-                <div class="row">
-                    <div class="col-lg-9">
-                        {% for i in information %}
-                            <p>{{ i.aboutUS|raw }}</p>
-                        {% endfor %}
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="about-us">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                    </div>
+                <div class="see-more">
+                    <a href="#">Ver más <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -91,30 +59,51 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h1>Misión</h1>
-                        {% for i in information %}
-                            <p>{{ i.mission }}</p>
-                        {% endfor %}
+                        <div class="col-lg-12 row">
+                            <h1>Misión</h1>
+                            {% for i in information %}
+                                <p>{{ i.mission }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="col-lg-12 row">
+                            <h1 class="mt-3">Visión</h1>
+                            {% for i in information %}
+                                <p>{{ i.vision }}</p>
+                            {% endfor %}
+                        </div>
                     </div>
                     <div class="col-lg-6">
-                        <h1>Visión</h1>
-                        {% for i in information %}
-                            <p>{{ i.vision }}</p>
-                        {% endfor %}
-                    </div>
+                        <div class="col-lg-12 row">
+                            <h1>¿Quiénes somos?</h1>
+                            {% for i in information %}
+                                <p>{{ i.aboutUS|raw }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>    
                 </div>
             </div>
         </section>
         <section>
             <div class="container">
+                <h1>Nuestros Servicios</h1>
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Valores</h1>
-                        <p>Texo de valores.</p>
-                    </div>
+                    {% for s in services %}
+                        <div class="col-lg-4">
+                            <a href="{{ path('service_show', { 'slug': s.slug }) }}">
+                                <div class="service-i zoom shadow-sm">
+                                    <i class="{{ s.icon }} fa-fw"></i>
+                                    <span>{{ s.name}}</span>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="see-more">
+                    <a href="{{ path('services_index')}}">Ver más <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
+
         {% for c in client %}
             {% if loop.index == 1 %}
                 <section>
@@ -139,30 +128,39 @@
                 </section>
             {% endif %}
         {% endfor %}
-        <section>
+        <section id="info">
             <div class="container">
             <h1 class="mb-4">¿Cómo llegar?</h1>
                 <div class="row">
                     <div class="col-lg-6">
-                        <h5>Dirección:</h5>
+                        <h5>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Dirección:
+                        </h5>
                         <address>
                             {% for i in information %}
                                 <p class="mb-2">{{ i.address|raw }}</p>
-                                {{ i.city }}, {{ i.state }}
+                                <p>{{ i.city }}, {{ i.state }}</p>
                             {% endfor %}
                         </address>
                         </div>
                         <div class="col-lg-6">
                         {% for i in information %}
-                            <h5>Teléfono:</h5>                            
+                            <h5>
+                                <i class="fas fa-phone"></i>
+                                Teléfono:
+                            </h5>
                             <p>+503 {{i.phone}}</p>
                         {% endfor %}
-                        <h5>Correo electrónico:</h5>                            
+                        <h5>
+                            <i class="fas fa-at"></i>
+                            Correo electrónico:
+                        </h5>
                         <a href="mailto:soporte@accountyzer.com">soporte@accountyzer.com</a>
                     </div>
-                    <div class="col-lg-12 mb-4">
+                    <div class="col-lg-12 mt-3">
                         {% for i in information %}
-                            <div class="map" style="height: 250px">
+                            <div class="map shadow" style="height: 350px">
                                 {{ i.map|raw }}
                             </div>
                         {% endfor %}

@@ -1,29 +1,49 @@
 {% extends 'templates/base.html.twig' %}
 {% block title %}Servicios | Accountyzer {% endblock %}
 {% block body %}
-    <section class="services">
-        <div class="container animated fadeIn">
-            <div class="row">
-            {% for service in services %}
-                <div class="col-lg-4 mb-5">
-                    {% set img = 'assets/images/services/'~service.filename %}
-                    <a class="img-fluid" href="{{ path('service_show', { 'slug': service.slug }) }}">
-                        <img class="img-fluid img-thumbnail shadow-sm" src="{{ asset(img|imagine_filter('680x388')) }}" alt="{{ service.alt }}">
-                    </a>
-                    <a class="service-home-title" href="{{ path('service_show', { 'slug': service.slug }) }}">
-                        <h2 class="mb-3">
-                            <i class="{{ service.icon }} fa-fw"></i>
-                            {{ service.name }}
-                        </h2>
-                    </a>
-                    <p>{{ service.description }}</p>
-                    <a class="see-more " href="{{ path('service_show', { 'slug': service.slug }) }}">
-                        Ver más
-                        <i class="far fa-plus-square"></i>
-                    </a>
+    {% for s in services %}
+        <section class="services">
+            <div class="container animated fadeIn">
+                <div class="row">
+                    {% if s.id is odd %}
+                        <div class="col-lg-6">
+                            <a class="service-home-title" href="{{ path('service_show', { 'slug': s.slug }) }}">
+                                <h1 class="mb-3">
+                                    {{ s.name }}
+                                </h1>
+                            </a>
+                            <p>{{ s.description }}</p>
+                            <div class="see-more">
+                                <a href="{{ path('service_show', { 'slug': s.slug }) }}" >Ver más <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            {% set img = 'assets/images/services/'~s.filename %}
+                            <a class="img-fluid" href="{{ path('service_show', { 'slug': s.slug }) }}">
+                                <img class="img-fluid shadow shadow-sm" src="{{ asset(img|imagine_filter('680x388')) }}" alt="{{ s.alt }}">
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="col-lg-6">
+                            {% set img = 'assets/images/services/'~s.filename %}
+                            <a class="img-fluid" href="{{ path('service_show', { 'slug': s.slug }) }}">
+                                <img class="img-fluid shadow shadow-sm" src="{{ asset(img|imagine_filter('680x388')) }}" alt="{{ s.alt }}">
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                            <a class="service-home-title" href="{{ path('service_show', { 'slug': s.slug }) }}">
+                                <h1 class="mb-3">
+                                    {{ s.name }}
+                                </h1>
+                            </a>
+                            <p >{{ s.description }}</p>
+                            <div class="see-more">
+                                <a href="{{ path('service_show', { 'slug': s.slug }) }}" >Ver más <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
-                {% endfor %}
             </div>
-        </div>
-    </section>
+        </section>
+    {% endfor %}
 {% endblock %}
