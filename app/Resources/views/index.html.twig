@@ -1,10 +1,17 @@
 {% extends 'templates/base.html.twig' %}
 {% block body %}
     <div class="animated fadeIn">
-        <div class="header shadow-sm">
+        <div class="header">
             <div class="container">
-                <h1>Accountyzer</h1>
-                <p>Sinérgica consultores, es una compañía especializada comprometida con la entrega de calidad, conformada por socios y asociados que cuentan con más de 25 años de experiencia en las áreas de impuestos, auditoría, finanzas y contabilidad.</p>
+                <div class="row">
+                <div class="col-lg-8 pt-5">
+                    <h1>Accountyzer</h1>
+                    <p>Sinérgica consultores, es una compañía especializada comprometida con la entrega de calidad, conformada por socios y asociados que cuentan con más de 25 años de experiencia en las áreas de impuestos, auditoría, finanzas y contabilidad.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="{{ asset('assets/banner.svg')}}" />
+                </div>
+                </div>
             </div>
         </div>
         {#
