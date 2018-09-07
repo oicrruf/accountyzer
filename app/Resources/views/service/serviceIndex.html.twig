@@ -6,6 +6,12 @@
             <div class="container animated fadeIn">
                 <div class="row">
                     {% if s.id is odd %}
+                        <div class="col-lg-6 img-show">
+                            {% set img = 'assets/images/services/'~s.filename %}
+                            <a class="img-fluid" href="{{ path('service_show', { 'slug': s.slug }) }}">
+                                <img class="img-fluid shadow shadow-sm" src="{{ asset(img|imagine_filter('680x388')) }}" alt="{{ s.alt }}">
+                            </a>
+                        </div>
                         <div class="col-lg-6">
                             <a class="service-home-title" href="{{ path('service_show', { 'slug': s.slug }) }}">
                                 <h1 class="mb-3">
@@ -17,7 +23,7 @@
                                 <a href="{{ path('service_show', { 'slug': s.slug }) }}" >Ver más <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 img-hidden">
                             {% set img = 'assets/images/services/'~s.filename %}
                             <a class="img-fluid" href="{{ path('service_show', { 'slug': s.slug }) }}">
                                 <img class="img-fluid shadow shadow-sm" src="{{ asset(img|imagine_filter('680x388')) }}" alt="{{ s.alt }}">

@@ -64,30 +64,38 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h3>¿Cómo llegar?</h3>
+                <h4 class="mb-4">¿Cómo llegar?</h4>
                 {% for i in information %}
-                    <div class="map" style="height: 200px">
+                    <div class="map" style="height: 250px">
                         {{ i.map|raw }}
                     </div>
                 {% endfor %}
-                           
-                <div class="contact-info">
-                    <h5>Dirección:</h5>   
-                    <address>
-                        {% for i in information %}
-                            <p class="mb-3">{{ i.address|raw }}</p>
-                            {{ i.city }}, {{ i.state }}
-                        {% endfor %}
-                    </address>
+                <div id="info" class="mt-5">
                     <div class="row">
                         <div class="col-lg-6">
+                            <h5>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Dirección:
+                            </h5>
+                            <address>
+                                {% for i in information %}
+                                    <p class="mb-2">{{ i.address|raw }}</p>
+                                    <p>{{ i.city }}, {{ i.state }}</p>
+                                {% endfor %}
+                            </address>
+                        </div>
+                        <div class="col-lg-6">
                             {% for i in information %}
-                                <h5>Teléfono:</h5>                            
+                                <h5>
+                                    <i class="fas fa-phone"></i>
+                                    Teléfono:
+                                </h5>
                                 <p>+503 {{i.phone}}</p>
                             {% endfor %}
-                        </div>                
-                        <div class="col-lg-6">            
-                            <h5>Correo electrónico:</h5>                            
+                            <h5>
+                                <i class="fas fa-at"></i>
+                                Correo electrónico:
+                            </h5>
                             <a href="mailto:soporte@accountyzer.com">soporte@accountyzer.com</a>
                         </div>
                     </div>

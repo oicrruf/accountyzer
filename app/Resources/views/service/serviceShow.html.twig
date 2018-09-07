@@ -3,33 +3,51 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 animated fadeIn">
-                {% if service.filename %}
-                    {% set img = 'assets/images/services/'~service.filename %}
-                    <img class="img-fluid rounded shadow-sm" src="{{ asset(img|imagine_filter('730x486')) }}" alt="{{ service.alt }}">
-                {% endif %}
-                
-                <div class="service-title">
-                    <h1 class="mt-4">{{ service.name }}</h1>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6 animated fadeIn">
+                        {% if service.filename %}
+                            {% set img = 'assets/images/services/'~service.filename %}
+                            <img class="img-fluid rounded shadow-sm service-show-img" src="{{ asset(img|imagine_filter('730x486')) }}" alt="{{ service.alt }}">
+                        {% endif %}
+                    </div>                
+                    <div class="col-lg-6 animated fadeIn">
+                        <div class="service-title">
+                            <h1>{{ service.name }}</h1>
+                        </div>
+                        <p>{{ service.description }}</p>
+                        <ul class="fa-ul">
+                            {% for d in detail if service.id == d.service.id %}
+                                <li><span class="fa-li" style="font-size: 0.6rem; margin-top: 5px;"><i class="fas fa-check"></i></span>{{ d.name }}</li>
+                            {% endfor %}    
+                        </ul>
+                    </div>
                 </div>
-                
-                <p>{{ service.description }}</p>
-                <ul class="fa-ul">
-                    {% for d in detail if service.id == d.service.id %}
-                        <li><span class="fa-li" style="font-size: 0.6rem; margin-top: 5px"><i class="fas fa-check"></i></span>{{ d.name }}</li>
-                    {% endfor %}    
-                </ul>
             </div>
-            <div class="col-lg-4">
-                <div class="service-other">
-                    <h4>Otros servicios:</h4>
-                </div>
-                <div class="list-group">
-                    {% for s in allServices if s.id != service.id %}
-                        <a href="{{ path('service_show', { 'slug': s.slug }) }}" class="list-group-item list-group-item-action text-muted">
-                            <i class="{{ s.icon }} fa-fw"></i> {{ s.name }}
+        </div>
+    </div>
+</section>
+<section id="services-other">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Otros servicios:</h2>
+                <div class="row">
+                {% for s in allServices if s.id != service.id %}
+                    <div class="col-lg-3 zoom">
+                        <a href="{{ path('service_show', { 'slug': s.slug }) }}" >
+                            {% set img = 'assets/images/services/'~s.filename %}
+                            <img class="img-fluid rounded  mt-4" src="{{ asset(img|imagine_filter('680x388')) }}" alt="{{ s.alt }}">
+                            <span>
+                                <span class="fa-stack ">
+                                    <i class="fas fa-square fa-stack-2x"></i>
+                                    <i class="{{ s.icon }} fa-stack-1x fa-inverse"></i>
+                                </span>
+                                {{ s.name }}
+                            </span>
                         </a>
-                    {% endfor %}
+                    </div>
+                {% endfor %}
                 </div>
             </div>
         </div>

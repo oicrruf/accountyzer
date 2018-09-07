@@ -1,10 +1,37 @@
-.services 
-    margin: 50px
-    p
-        line-height: 1.6rem
-        width: 80%
-    img
-        border-radius: 5px
+@media only screen and (min-width: 992px)
+    .services 
+        margin: 30px
+        .see-more, 
+        h1
+            margin-left: 50px
+        p
+            line-height: 1.6rem
+            width: 80%
+            margin-left: 50px
+        img
+            border-radius: 5px
+            width: 80%
+            margin-left: 50px
+        .img-show
+            display: none !important
+
+@media only screen and (max-width: 991px) 
+    .services 
+        margin: 20px 0px 0px 0px
+        .see-more, 
+        h1
+            margin-left: 0px
+        p
+            line-height: 1.6rem
+            width: 100%
+            margin-left: 0px
+        img
+            border-radius: 5px
+            width: 100%
+            margin-left: 0px
+            margin-bottom: 30px
+        .img-hidden
+            display: none !important
 
 .service-home-title
     h2
@@ -15,26 +42,27 @@
         color: $red
         text-decoration: none
 
-.service-other
-    border-left: 8px solid #8e8e8f  
-    border-top: 1px solid #ddd 
-    border-right: 1px solid #ddd 
-    border-bottom: 1px solid #ddd 
-    padding-left: 10px
-    border-radius: 5px
-    margin-bottom: 20px
-    color: #585862 
-    height: 3rem
-    h4 
-        line-height: 3rem 
-
 .service-title
-    padding-left: 10px
     border-radius: 5px
     margin-bottom: 20px
     color: $red-dark     
+
+.service-show-img 
+    margin-bottom: 20px
 
 @media only screen and (max-width: 600px) 
     .service-title
         h1
             font-size: 1.2rem
+
+#services-other
+    h2
+        color: $purple-dark
+        font-size: 1.4rem
+    img 
+        margin-bottom: 10px
+    span
+        color: $purple
+        span
+            margin-right: 3px
+        

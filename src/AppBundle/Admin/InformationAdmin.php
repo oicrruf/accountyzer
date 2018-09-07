@@ -51,8 +51,7 @@ class InformationAdmin extends AbstractAdmin
             ])
             ->add('_action', null, [
                 'actions' => [
-                    'show' => [],
-                    'edit' => [],
+                    'edit' => []
                 ],
             ])
         ;
