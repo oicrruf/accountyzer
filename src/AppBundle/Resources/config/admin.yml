@@ -48,3 +48,17 @@ services:
         calls:
             - [ setTranslationDomain, [AppBundle]]
         public: true
+
+    app.admin.training:
+        class: AppBundle\Admin\TrainingAdmin
+        arguments: [~, AppBundle\Entity\Training, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Capacitaciones, label: "Capacitación", icon: "<i class=\"fa fa-calendar\"></i>" }
+        public: true
+
+    app.admin.training_cost:
+        class: AppBundle\Admin\TrainingCostAdmin
+        arguments: [~, AppBundle\Entity\TrainingCost, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Capacitaciones, label: "Costo de Capacitación", icon: "<i class=\"fa fa-calendar\"></i>" }
+        public: true

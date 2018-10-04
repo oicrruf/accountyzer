@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Training" table="Training">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="name" type="string" column="name" length="255" nullable="false"/>
+    <field name="goal" type="text" column="goal" nullable="true"/>
+    <field name="content" type="text" column="content" nullable="true"/>
+    <field name="start_date" type="date" column="start_date" nullable="false"/>
+    <field name="end_date" type="date" column="end_date" nullable="false"/>
+    <field name="place" type="string" column="place" length="255" nullable="false"/>
+    <field name="start_hour" type="time" column="start_hour" nullable="false"/>
+    <field name="end_hour" type="time" column="end_hour" nullable="false"/>
+    <field name="contact_phone" type="string" column="contact_phone" length="9" nullable="false"/>
+    <field name="contact_email" type="string" column="contact_email" length="100" nullable="false"/>
+    <field name="target" type="text" column="target" nullable="true"/>
+  </entity>
+</doctrine-mapping>
