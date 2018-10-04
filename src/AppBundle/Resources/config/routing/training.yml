@@ -1,0 +1,12 @@
+training_index:
+    path:     /capacitaciones
+    defaults: { _controller: "AppBundle:Training:index" }
+    methods:  GET
+
+training_show:
+    path:     /capacitaciones/{id}
+    defaults: { _controller: "AppBundle:Training:show" }
+    methods:  GET
+
+
+

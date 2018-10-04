@@ -1,0 +1,25 @@
+{% extends 'templates/base.html.twig' %}
+{% block body %}
+    <section>
+        <div class="container">
+            <div class="row">
+                {% for training in trainings %}
+                    <div class="col-lg-6">
+                        <a href="{{ path('training_show', { 'id': training.id }) }}">{{ training.name }}</a>
+                        {{ training.goal }}
+                        {{ training.content }}
+                        {% if training.startdate %}{{ training.startdate|date('Y-m-d') }}{% endif %}
+                        {% if training.enddate %}{{ training.enddate|date('Y-m-d') }}{% endif %}
+                        {{ training.place }}
+                        {% if training.starthour %}{{ training.starthour|date('H:i:s') }}{% endif %}
+                        {% if training.endhour %}{{ training.endhour|date('H:i:s') }}{% endif %}
+                        {{ training.contactphone }}
+                        {{ training.contactemail }}
+                        {{ training.target }}
+                        {{ training.id }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

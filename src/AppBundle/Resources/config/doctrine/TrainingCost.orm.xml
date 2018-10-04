@@ -4,7 +4,7 @@
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
-    <field name="cost" type="decimal" column="cost" precision="2" scale="1" nullable="false"/>
+    <field name="cost" type="string" column="cost" precision="2" scale="1" nullable="false"/>
     <field name="detail" type="string" column="detail" length="100" nullable="true"/>
     <many-to-one field="training" target-entity="AppBundle\Entity\Training" inversed-by="trainingCosts" fetch="LAZY">
       <join-columns>

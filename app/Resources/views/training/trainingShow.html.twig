@@ -1,0 +1,39 @@
+{% extends 'templates/base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <section>
+            <h1>{{ training.name }}</h1>
+        
+            <h5>Objetivos del Taller</h5>
+            {{ training.goal|raw }}
+        
+            <h5>Contenido y Enfoque del Taller</h5>
+            {{ training.content }}
+        
+            <h5>Fecha de Inicio:</h5>
+            {% if training.startdate %}{{ training.startdate|date('Y-m-d') }}{% endif %}
+        
+            <h5>Fecha de Finalización:</h5>
+            {% if training.enddate %}{{ training.enddate|date('Y-m-d') }}{% endif %}
+        
+            <h5>Lugar:</h5>
+            {{ training.place }}
+        
+            <h5>Hora de Inicio:</h5>
+            {% if training.starthour %}{{ training.starthour|date('H:i:s') }}{% endif %}
+        
+            <h5>Hora de Finalización:</h5>
+            {% if training.endhour %}{{ training.endhour|date('H:i:s') }}{% endif %}
+        
+            <h5>Teléfono:</h5>
+            {{ training.contactphone }}
+        
+            <h5>Email:</h5>
+            {{ training.contactemail }}
+        
+            <h5>Dirigido a:</h5>
+            {{ training.target }}
+        </section>
+    </div>        
+{% endblock %}

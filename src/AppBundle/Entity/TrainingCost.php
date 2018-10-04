@@ -109,4 +109,11 @@ class TrainingCost
     {
         return $this->training;
     }
+
+    public function __toString() {
+        if(is_null($this->cost)) {
+            return 'NULL';
+        }
+        return $this->cost;
+    }
 }

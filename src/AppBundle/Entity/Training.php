@@ -341,4 +341,11 @@ class Training
     {
         return $this->target;
     }
+
+    public function __toString() {
+        if(is_null($this->name)) {
+            return 'NULL';
+        }
+        return $this->name;
+    }
 }

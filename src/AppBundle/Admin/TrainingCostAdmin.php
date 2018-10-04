@@ -8,6 +8,9 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use AppBundle\Entity\Training;
+
 class TrainingCostAdmin extends AbstractAdmin
 {
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -15,7 +18,7 @@ class TrainingCostAdmin extends AbstractAdmin
         $datagridMapper
             ->add('cost')
             ->add('detail')
-            ->add('id')
+            ->add('training')
         ;
     }
 
@@ -24,6 +27,7 @@ class TrainingCostAdmin extends AbstractAdmin
         $listMapper
             ->add('cost')
             ->add('detail')
+            ->add('training')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -39,6 +43,10 @@ class TrainingCostAdmin extends AbstractAdmin
         $formMapper
             ->add('cost')
             ->add('detail')
+            ->add('training', EntityType::class, [
+                'class' => Training::class,
+                'choice_label' => 'name',
+            ])
         ;
     }
 
@@ -47,6 +55,7 @@ class TrainingCostAdmin extends AbstractAdmin
         $showMapper
             ->add('cost')
             ->add('detail')
+            ->add('training')
         ;
     }
 }

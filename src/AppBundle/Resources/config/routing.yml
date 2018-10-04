@@ -9,3 +9,8 @@ app_service:
 #Contacto
 app_contact: 
     resource: "@AppBundle/Resources/config/routing/message.yml"
+
+# Entrenamiento
+app_training: 
+    resource: "@AppBundle/Resources/config/routing/training.yml"
+
